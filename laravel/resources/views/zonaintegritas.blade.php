@@ -237,7 +237,7 @@
                         <li>Terjadinya perubahan pola pikir dan budaya kerja pada unit kerja; dan</li>
                         <li>Menurunnya resiko kegagalan yang disebabkan kemungkinan timbulnya resistensi terhadap perubahan.</li>
                     </ol>
-                    <img src="{{URL::to('/')}}/media/zi/btn.png" alt="btn" class="mx-auto w-96 animate-pulse p-5">
+                    <a href="https://drive.google.com/drive/folders/1-IL7LHlDHy9lKcI4RZuAjqe-QfcIpNxM" target="blank"><img src="{{URL::to('/')}}/media/zi/btn.png" alt="btn" class="mx-auto w-96 animate-pulse p-5"></a>
                 </div>
                 <!-- Modal footer -->
                 <div class="flex items-center p-6 space-x-2 border-t rounded-b border-gray-600">
@@ -267,7 +267,7 @@
                         <li>Meningkatnya efisiensi dan efektivitas proses manajemen pemerintahan; dan</li>
                         <li>Meningkatnya kinerja di Zona Integritas.</li>
                     </ol>
-                    <img src="{{URL::to('/')}}/media/zi/btn.png" alt="btn" class="mx-auto w-96 animate-pulse p-5">
+                    <a href="https://drive.google.com/drive/folders/1uGeQuk1FJNpWakeeuqCC0yFcimthqJ0b" target="blank"><img src="{{URL::to('/')}}/media/zi/btn.png" alt="btn" class="mx-auto w-96 animate-pulse p-5"></a>
                 </div>
                 <!-- Modal footer -->
                 <div class="flex items-center p-6 space-x-2 border-t rounded-b border-gray-600">
@@ -299,7 +299,7 @@
                         <li>Meningkatnya efektivitas manajemen SDM aparatur; dan</li>
                         <li>Meningkatnya profesionalisme SDM aparatur.</li>
                     </ol>
-                    <img src="{{URL::to('/')}}/media/zi/btn.png" alt="btn" class="mx-auto w-96 animate-pulse p-5">
+                    <a href="https://drive.google.com/drive/folders/1eWSbSWbiZhj1IIoEGcQVp5DYLZrorDpb" target="blank"><img src="{{URL::to('/')}}/media/zi/btn.png" alt="btn" class="mx-auto w-96 animate-pulse p-5"></a>
                 </div>
                 <!-- Modal footer -->
                 <div class="flex items-center p-6 space-x-2 border-t rounded-b border-gray-600">
@@ -328,7 +328,7 @@
                         <li>Meningkatnya kinerja instansi pemerintah; dan</li>
                         <li>Meningkatnya akuntabilitas instansi pemerintah.</li>
                     </ol>
-                    <img src="{{URL::to('/')}}/media/zi/btn.png" alt="btn" class="mx-auto w-96 animate-pulse p-5">
+                    <a href="" target="blank"><img src="{{URL::to('/')}}/media/zi/btn.png" alt="btn" class="mx-auto w-96 animate-pulse p-5"></a>
                 </div>
                 <!-- Modal footer -->
                 <div class="flex items-center p-6 space-x-2 border-t rounded-b border-gray-600">
@@ -359,7 +359,7 @@
                         <li>Meningkatnya status opini BPK terhadap pengelolaan keuangan negara; dan</li>
                         <li>Menurunnya tingkat penyalahgunaan wewenang.</li>
                     </ol>
-                    <img src="{{URL::to('/')}}/media/zi/btn.png" alt="btn" class="mx-auto w-96 animate-pulse p-5">
+                    <a href="https://drive.google.com/drive/folders/17KxTzMQwbOx-mewniQM6jfd5vxaP1v_A" target="blank"><img src="{{URL::to('/')}}/media/zi/btn.png" alt="btn" class="mx-auto w-96 animate-pulse p-5"></a>
                 </div>
                 <!-- Modal footer -->
                 <div class="flex items-center p-6 space-x-2 border-t rounded-b border-gray-600">
@@ -389,7 +389,7 @@
                         <li>Meningkatnya jumlah unit pelayanan yang memperoleh standardisasi pelayanan internasional pada instansi pemerintah; dan</li>
                         <li>Meningkatnya indeks kepuasan masyarakat terhadap penyelenggaraan pelayanan publik oleh masing-masing instansi pemerintah.</li>
                     </ol>
-                    <img src="{{URL::to('/')}}/media/zi/btn.png" alt="btn" class="mx-auto w-96 animate-pulse p-5">
+                    <a href="https://drive.google.com/drive/folders/1hccDKof7CI6FYq5WjKRJojkzcdsv5u4x" target="blank"><img src="{{URL::to('/')}}/media/zi/btn.png" alt="btn" class="mx-auto w-96 animate-pulse p-5"></a>
                 </div>
                 <!-- Modal footer -->
                 <div class="flex items-center p-6 space-x-2 border-t rounded-b border-gray-600">
