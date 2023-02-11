@@ -274,6 +274,7 @@
                     <h3 class="flex items-center mb-1 text-lg font-semibold text-white">Syarat Pembuatan Laporan Kehilangan</h3>
                     <ol class="text-gray-300 list-disc ml-5 font-normal">
                         <li>Identitas Diri (KTP/SIM/KK) atau Surat Pengantar dari RT/RW apabila tidak ada Identitas apapun</li>
+                        <li>Dokumen/surat yang dapat menunjukan bukti kepilikan barang yang dilaporkan</li>
                     </ol>
                 </li>
             </ol>
