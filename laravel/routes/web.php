@@ -15,6 +15,7 @@ Route::post('/backend/berita/addberita', $cnt.'Cbackend@addberita');
 Route::get('/register', $cnt.'Cregister@index');
 Route::post('/register/add', $cnt.'Cregister@add');
 Route::get('/anggaran', $cnt.'Canggaran@index');
+Route::get('/spkt', $cnt.'Cinformasi@spkt');
 Route::get('/sim', $cnt.'Cinformasi@sim');
 Route::get('/skck', $cnt.'Cinformasi@skck');
 Route::get('/identifikasi', $cnt.'Cinformasi@identifikasi');

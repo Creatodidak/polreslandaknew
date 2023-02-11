@@ -23,14 +23,14 @@
                             <div class="flex flex-col items-center pt-5">
                                 <img class="w-40 h-40 max-w-none mb-3 rounded-full border-4 border-red-600 shadow-lg" src="{{URL::to('/')}}/media/iden/yeye.jpg" alt="pers"/>
                                 <h5 class="mb-1 text-xl font-bold text-white">AIPDA YOHANES YANTO, A.Md.</h5>
-                                <span class="text-sm text-gray-400 font-semibold">???</span>
+                                <span class="text-sm text-gray-400 font-semibold">PS. KAUR IDENTIFIKASI</span>
                             </div>
                             <div class="flex flex-col items-left px-5 pb-5">
                                 <span class="text-sm text-gray-400">- PENDIDIKAN UMUM: DIPLOMA - III (D-III)</span>
                                 <span class="text-sm text-left text-gray-400">
                                     - DIKJUR/DIKLAT/SERTIFIKASI:
                                     <ul class="list-disc ml-10 text-xs">
-                                        <li>???</li>
+                                        <li>PELATIHAN BINTARA IDENTIFIKASI</li>
                                     </ul>
                                 </span>
                             </div>
