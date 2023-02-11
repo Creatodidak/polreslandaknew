@@ -54,7 +54,7 @@ $nama = explode(' ', trim($sentence ))[0];
                     <td>
                         <?= $l->judul ?>
                         <br>
-                        <span class="text-xs font-bold"><a href="/backend/berita/edit/<?= $l->id ?>" class="text-green-500">EDIT</a> | <span class="text-red-500 cursor-pointer" onclick="hapus('/backend/berita/delete/<?= $l->id ?>')">HAPUS</span></span>
+                        <span class="text-gray-300 cursor-pointer" onclick="salin('<?= $l->link ?>', '<?= $l->judul ?>', )">SALIN LINK</span> | <span class="text-xs font-bold"><a href="/backend/berita/edit/<?= $l->id ?>"  class="text-green-500">EDIT</a> | <span class="text-red-500 cursor-pointer" onclick="hapus('/backend/berita/delete/<?= $l->id ?>')">HAPUS</span></span>
                     </td>
                 </tr>
                 @empty
@@ -83,6 +83,18 @@ $nama = explode(' ', trim($sentence ))[0];
         $(document).ready(function () {
             $('#example').DataTable();
         });
+
+        function salin(link, judul){
+            navigator.clipboard.writeText('*'+judul+'* Https://reslandak.kalbar.polri.go.id/berita/'+link);
+            
+            Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Link Disalin',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        }
 
         function hapus(url) {
             Swal.fire({
