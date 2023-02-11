@@ -183,32 +183,32 @@
                     <div class="items-center p-5 md:p-10 m-1 md:m-5 justify-center flex flex-col rounded-2xl shadow-lg shadow-blue-500/50" data-modal-target="staticModal" data-modal-toggle="staticModal"
                         style="background-image: url('{{ URL::to("/") }}/media/zi/bg.png'); background-repeat: no-repeat; background-size:cover">
                         <span class="text-lg md:text-2xl pt-1 md:pt-10 font-bold text-white">PROGRAM I</span>
-                        <span class="text-sm md:text-lg pb-1 md:pb-10 font-medium text-gray-200">MANAJEMEN PERUBAHAN</span>
+                        <span class="text-xs md:text-lg pb-1 md:pb-10 font-medium text-gray-200">MANAJEMEN PERUBAHAN</span>
                     </div>
                     <div class="items-center p-5 md:p-10 m-1 md:m-5 justify-center flex flex-col rounded-2xl shadow-lg shadow-blue-500/50" data-modal-target="staticModal2" data-modal-toggle="staticModal2"
                         style="background-image: url('{{ URL::to("/") }}/media/zi/bg.png'); background-repeat: no-repeat; background-size:cover">
                         <span class="text-lg md:text-2xl pt-1 md:pt-10 font-bold text-white">PROGRAM II</span>
-                        <span class="text-sm md:text-lg pb-1 md:pb-10 font-medium text-gray-200">PENATAAN TATA LAKSANA</span>
+                        <span class="text-xs md:text-lg pb-1 md:pb-10 font-medium text-gray-200">PENATAAN TATA LAKSANA</span>
                     </div>
                     <div class="items-center p-5 md:p-10 m-1 md:m-5 justify-center flex flex-col rounded-2xl shadow-lg shadow-blue-500/50" data-modal-target="staticModal3" data-modal-toggle="staticModal3"
                         style="background-image: url('{{ URL::to("/") }}/media/zi/bg.png'); background-repeat: no-repeat; background-size:cover">
                         <span class="text-lg md:text-2xl pt-1 md:pt-10 font-bold text-white">PROGRAM III</span>
-                        <span class="text-sm md:text-lg pb-1 md:pb-10 font-medium text-gray-200">PENATAAN SISTEM MANAJEMEN SDM</span>
+                        <span class="text-xs md:text-lg pb-1 md:pb-10 font-medium text-gray-200">PENATAAN SISTEM MANAJEMEN SDM</span>
                     </div>
                     <div class="items-center p-5 md:p-10 m-1 md:m-5 justify-center flex flex-col rounded-2xl shadow-lg shadow-blue-500/50" data-modal-target="staticModal4" data-modal-toggle="staticModal4"
                         style="background-image: url('{{ URL::to("/") }}/media/zi/bg.png'); background-repeat: no-repeat; background-size:cover">
                         <span class="text-lg md:text-2xl pt-1 md:pt-10 font-bold text-white">PROGRAM IV</span>
-                        <span class="text-sm md:text-lg pb-1 md:pb-10 font-medium text-gray-200">PENGUATAN AKUNTABILITAS</span>
+                        <span class="text-xs md:text-lg pb-1 md:pb-10 font-medium text-gray-200">PENGUATAN AKUNTABILITAS</span>
                     </div>
                     <div class="items-center p-5 md:p-10 m-1 md:m-5 justify-center flex flex-col rounded-2xl shadow-lg shadow-blue-500/50" data-modal-target="staticModal5" data-modal-toggle="staticModal5"
                         style="background-image: url('{{ URL::to("/") }}/media/zi/bg.png'); background-repeat: no-repeat; background-size:cover">
                         <span class="text-lg md:text-2xl pt-1 md:pt-10 font-bold text-white">PROGRAM V</span>
-                        <span class="text-sm md:text-lg pb-1 md:pb-10 font-medium text-gray-200">PENGUATAN PENGAWASAN</span>
+                        <span class="text-xs md:text-lg pb-1 md:pb-10 font-medium text-gray-200">PENGUATAN PENGAWASAN</span>
                     </div>
                     <div class="items-center p-5 md:p-10 m-1 md:m-5 justify-center flex flex-col rounded-2xl shadow-lg shadow-blue-500/50" data-modal-target="staticModal6" data-modal-toggle="staticModal6"
                         style="background-image: url('{{ URL::to("/") }}/media/zi/bg.png'); background-repeat: no-repeat; background-size:cover">
                         <span class="text-lg md:text-2xl pt-1 md:pt-10 font-bold text-white">PROGRAM VI</span>
-                        <span class="text-sm md:text-lg pb-1 md:pb-10 font-medium text-gray-200">PENINGKATAN KUALITAS PELAYANAN PUBLIK</span>
+                        <span class="text-xs md:text-lg pb-1 md:pb-10 font-medium text-gray-200">PENINGKATAN KUALITAS PELAYANAN PUBLIK</span>
                     </div>
                 </div>
             </div>
