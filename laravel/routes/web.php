@@ -18,6 +18,13 @@ Route::get('/anggaran', $cnt.'Canggaran@index');
 Route::get('/sim', $cnt.'Cinformasi@sim');
 Route::get('/skck', $cnt.'Cinformasi@skck');
 Route::get('/zonaintegritas', $cnt.'Czonaintegritas@index');
+Route::get('/faq', $cnt.'Cfaq@index');
+Route::get('/faqadmin', $cnt.'Cfaq@admin');
+Route::get('/faqadminval/{nrp}/{pelayanan}', $cnt.'Cfaq@validasi');
+Route::get('/faqdata/{pelayanan}', $cnt.'Cfaq@data');
+Route::post('/faqadd', $cnt.'Cfaq@add');
+Route::get('/faqdel/{id}', $cnt.'Cfaq@del');
+
 
 Route::get('berita/{link}', $cnt.'Cberita@index');
 Route::get('berita/more/{limit}', $cnt.'Cberita@more');
