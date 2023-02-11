@@ -29,7 +29,7 @@
                                 <span class="text-sm text-gray-400">- PENDIDIKAN UMUM: DIPLOMA - III (D-III)</span>
                                 <span class="text-sm text-left text-gray-400">
                                     - DIKJUR/DIKLAT/SERTIFIKASI:
-                                    <ul class="list-disc ml-10 text-xs">
+                                    <ul class="list-disc ml-2 text-xs">
                                         <li>PELATIHAN BINTARA IDENTIFIKASI</li>
                                     </ul>
                                 </span>
@@ -47,7 +47,7 @@
                                 <span class="text-sm text-gray-400">- PENDIDIKAN UMUM: SMA</span>
                                 <span class="text-sm text-left text-gray-400">
                                     - DIKJUR/DIKLAT/SERTIFIKASI:
-                                    <ul class="list-disc ml-10 text-xs">
+                                    <ul class="list-disc ml-2 text-xs">
                                         <li>???</li>
                                     </ul>
                                 </span>
@@ -105,6 +105,37 @@
             </ul>
           </div>
         </div>
+        <h2 id="accordion-color-heading-11" class="font-bold">
+            <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left border border-b-0 focus:ring-4 focus:ring-blue-800 border-gray-700 text-gray-200 hover:bg-gray-800" data-accordion-target="#accordion-color-body-11" aria-expanded="false" aria-controls="accordion-color-body-11">
+              <span>Jadwal Pelayanan</span>
+              <svg data-accordion-icon class="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+          </h2>
+          <div id="accordion-color-body-11" class="hidden" aria-labelledby="accordion-color-heading-11">
+            <div class="p-5 border border-b-0 border-gray-700 bg-gray-900">
+              <ul class="text-gray-300 list-disc ml-5 font-semibold">
+                  <li>SENIN - KAMIS
+                      <ol class="text-gray-300 ml-5 font-normal">
+                          <li>BUKA: 08.00 WIB</li>
+                          <li>ISTIRAHAT: 11.30 WIB - 12.30 WIB</li>
+                          <li>TUTUP: 15.00 WIB</li>
+                      </ol>
+                  </li>
+                  <li>JUM'AT
+                    <ol class="text-gray-300 ml-5 font-normal">
+                        <li>BUKA: 08.00 WIB</li>
+                        <li>ISTIRAHAT: 11.30 WIB - 12.30 WIB</li>
+                        <li>TUTUP: 15.30 WIB</li>
+                    </ol>
+                  </li>
+                  <li>SABTU & MINGGU
+                    <ol class="text-gray-300 ml-5 font-normal">
+                        <li>TIDAK ADA PELAYANAN</li>
+                    </ol>
+                  </li>
+              </ul>
+            </div>
+          </div>
         <h2 id="accordion-color-heading-3">
             <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left border border-b-0 focus:ring-4 focus:ring-blue-800 border-gray-700 text-gray-400  hover:bg-gray-800" data-accordion-target="#accordion-color-body-3" aria-expanded="false" aria-controls="accordion-color-body-3">
               <span>Syarat Pembuatan Kartu Identifikasi Sidik Jari</span>
@@ -149,6 +180,62 @@
                         <li class="font-bold text-yellow-300">Pembuatan Kartu Identifikasi Sidik Jari Tidak Dipungut Biaya Apapun atau 100% Gratis!</li>
                     </ol>
                         
+                </li>
+            </ol>
+        </div>
+        <h2 id="accordion-color-heading-5">
+            <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left border border-b-0 focus:ring-4 focus:ring-blue-800 border-gray-700 text-gray-400  hover:bg-gray-800" data-accordion-target="#accordion-color-body-5" aria-expanded="false" aria-controls="accordion-color-body-5">
+              <span>Alur Pembuatan Kartu Identifikasi Sidik Jari</span>
+              <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+          </h2>
+        <div id="accordion-color-body-5" class="hidden" aria-labelledby="accordion-color-heading-5">
+            <ol class="relative border-l border-gray-700 p-5">                  
+                <li class="mb-10 ml-6">            
+                    <span class="absolute flex items-center justify-center w-6 h-6 rounded-full -left-3 ring-8 ring-gray-900 bg-blue-900">
+                        <svg aria-hidden="true" fill="currentColor" class="w-3 h-3 text-blue-300" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path clip-rule="evenodd" d="M4.606 12.97a.75.75 0 01-.134 1.051 2.494 2.494 0 00-.93 2.437 2.494 2.494 0 002.437-.93.75.75 0 111.186.918 3.995 3.995 0 01-4.482 1.332.75.75 0 01-.461-.461 3.994 3.994 0 011.332-4.482.75.75 0 011.052.134z" fill-rule="evenodd"></path>
+                            <path clip-rule="evenodd" d="M5.752 12A13.07 13.07 0 008 14.248v4.002c0 .414.336.75.75.75a5 5 0 004.797-6.414 12.984 12.984 0 005.45-10.848.75.75 0 00-.735-.735 12.984 12.984 0 00-10.849 5.45A5 5 0 001 11.25c.001.414.337.75.751.75h4.002zM13 9a2 2 0 100-4 2 2 0 000 4z" fill-rule="evenodd"></path>
+                          </svg>
+                    </span>
+                    <h3 class="flex items-left mb-1 text-lg font-semibold text-white flex-col">Alur Pembuatan Kartu Identifikasi Sidik Jari<br>
+                        <span class="text-lg w-fit font-medium mr-2 px-2.5 py-0.5 mb-3 rounded bg-gray-700 text-blue-400 border border-blue-400">Standart Waktu: 10 Menit</span></h3>
+                        <ol class="relative border-l border-gray-700 text-gray-400">
+                            <li class="mb-10 ml-6">
+                                <span class="absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ring-4 ring-gray-900 bg-gray-700">
+                                    <svg aria-hidden="true" fill="currentColor" class="w-5 h-5 text-gray-400" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path clip-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h10.5a.75.75 0 010 1.5H12v13.75a.75.75 0 01-.75.75h-1.5a.75.75 0 01-.75-.75v-2.5a.75.75 0 00-.75-.75h-2.5a.75.75 0 00-.75.75v2.5a.75.75 0 01-.75.75h-2.5a.75.75 0 010-1.5H2v-13h-.25A.75.75 0 011 2.75zM4 5.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-1a.5.5 0 01-.5-.5v-1zM4.5 9a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zM8 5.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-1a.5.5 0 01-.5-.5v-1zM8.5 9a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1zM14.25 6a.75.75 0 00-.75.75V17a1 1 0 001 1h3.75a.75.75 0 000-1.5H18v-9h.25a.75.75 0 000-1.5h-4zm.5 3.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-1a.5.5 0 01-.5-.5v-1zm.5 3.5a.5.5 0 00-.5.5v1a.5.5 0 00.5.5h1a.5.5 0 00.5-.5v-1a.5.5 0 00-.5-.5h-1z" fill-rule="evenodd"></path>
+                                      </svg>
+                                </span>
+                                <h3 class="font-medium leading-tight">Pemohon tiba di gedung SPKT Polres Landak dan langsung menuju ke Ruang Identifikasi Sidik Jari</h3>
+                            </li>                     
+                            <li class="mb-10 ml-6">
+                                <span class="absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ring-4 ring-gray-900 bg-gray-700">
+                                    <svg aria-hidden="true" fill="none" class="w-5 h-5 text-gray-400" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+                                      </svg>
+                                </span>
+                                <h3 class="font-medium leading-tight">Pemohon menyerahkan persyaratan administrasi dan mengisi data diri</h3>
+                                <p class="text-sm py-2">Lokasi:<span class="text-yellow-200"> Ruang Identifikasi</span></p>
+                            </li> 
+                            <li class="mb-10 ml-6">
+                                <span class="absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ring-4 ring-gray-900 bg-gray-700">
+                                    <svg aria-hidden="true" fill="currentColor" class="w-5 h-5 text-gray-400" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path clip-rule="evenodd" d="M10 2.5c-1.31 0-2.526.386-3.546 1.051a.75.75 0 01-.82-1.256A8 8 0 0118 9a22.47 22.47 0 01-1.228 7.351.75.75 0 11-1.417-.49A20.97 20.97 0 0016.5 9 6.5 6.5 0 0010 2.5zM4.333 4.416a.75.75 0 01.218 1.038A6.466 6.466 0 003.5 9a7.966 7.966 0 01-1.293 4.362.75.75 0 01-1.257-.819A6.466 6.466 0 002 9c0-1.61.476-3.11 1.295-4.365a.75.75 0 011.038-.219zM10 6.12a3 3 0 00-3.001 3.041 11.455 11.455 0 01-2.697 7.24.75.75 0 01-1.148-.965A9.957 9.957 0 005.5 9c0-.028.002-.055.004-.082a4.5 4.5 0 018.996.084V9.15l-.005.297a.75.75 0 11-1.5-.034c.003-.11.004-.219.005-.328a3 3 0 00-3-2.965zm0 2.13a.75.75 0 01.75.75c0 3.51-1.187 6.745-3.181 9.323a.75.75 0 11-1.186-.918A13.687 13.687 0 009.25 9a.75.75 0 01.75-.75zm3.529 3.698a.75.75 0 01.584.885 18.883 18.883 0 01-2.257 5.84.75.75 0 11-1.29-.764 17.386 17.386 0 002.078-5.377.75.75 0 01.885-.584z" fill-rule="evenodd"></path>
+                                      </svg>
+                                </span>
+                                <h3 class="font-medium leading-tight">Pemohon akan dipindai Sidik Jarinya dan akan dilakukan perumusan oleh personil Identifikasi </h3>
+                                <span class="text-xs font-medium mr-2 px-2.5 py-0.5 rounded bg-gray-700 text-blue-400 border border-blue-400">Standart Waktu: 10 Menit</span>
+                                <p class="text-sm py-2">Lokasi:<span class="text-yellow-200"> Ruang Identifikasi</span></p>
+                            </li>                  
+                            <li class="mb-10 ml-6">            
+                                <span class="absolute flex items-center justify-center w-8 h-8 rounded-full -left-4 ring-4 ring-gray-900 bg-green-900">
+                                    <svg aria-hidden="true" class="w-5 h-5 text-green-400 animate-ping" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                </span>
+                                <h3 class="font-medium leading-tight">Sidik Jari yang telah dirumuskan akan diinput dan dicetak oleh petugas Identifikasi, selanjutnya akan diserahkan dalam bentuk Kartu Identifikasi Sidik jari</h3>
+                                <p class="text-sm py-2">Lokasi:<span class="text-yellow-200"> Ruang Identifikasi</span></p>
+                            </li>
+                        </ol>
                 </li>
             </ol>
         </div>

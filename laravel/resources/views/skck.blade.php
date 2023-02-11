@@ -29,7 +29,7 @@
                                 <span class="text-sm text-gray-400">- PENDIDIKAN UMUM: SMA</span>
                                 <span class="text-sm text-left text-gray-400">
                                     - DIKJUR/DIKLAT/SERTIFIKASI:
-                                    <ul class="list-disc ml-10 text-xs">
+                                    <ul class="list-disc ml-2 text-xs">
                                         <li>PELATIHAN BINTARA PENYELIDIKAN</li>
                                     </ul>
                                 </span>
@@ -47,7 +47,7 @@
                                 <span class="text-sm text-gray-400">- PENDIDIKAN UMUM: STRATA-1 (S-1)</span>
                                 <span class="text-sm text-left text-gray-400">
                                     - DIKJUR/DIKLAT/SERTIFIKASI:
-                                    <ul class="list-disc ml-10 text-xs">
+                                    <ul class="list-disc ml-2 text-xs">
                                         <li>SERTIFIKASI OPERATOR SKCK</li>
                                     </ul>
                                 </span>
@@ -65,7 +65,7 @@
                                 <span class="text-sm text-gray-400">- PENDIDIKAN UMUM: SMA</span>
                                 <span class="text-sm text-left text-gray-400">
                                     - DIKJUR/DIKLAT/SERTIFIKASI:
-                                    <ul class="list-disc ml-10 text-xs">
+                                    <ul class="list-disc ml-2 text-xs">
                                         <li>PELATIHAN OPERATOR SKCK ONLINE</li>
                                         <li>SERTIFIKASI OPERATOR SKCK</li>
                                     </ul>
@@ -127,6 +127,37 @@
             </ul>
           </div>
         </div>
+        <h2 id="accordion-color-heading-11" class="font-bold">
+            <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left border border-b-0 focus:ring-4 focus:ring-blue-800 border-gray-700 text-gray-200 hover:bg-gray-800" data-accordion-target="#accordion-color-body-11" aria-expanded="false" aria-controls="accordion-color-body-11">
+              <span>Jadwal Pelayanan</span>
+              <svg data-accordion-icon class="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+          </h2>
+          <div id="accordion-color-body-11" class="hidden" aria-labelledby="accordion-color-heading-11">
+            <div class="p-5 border border-b-0 border-gray-700 bg-gray-900">
+              <ul class="text-gray-300 list-disc ml-5 font-semibold">
+                  <li>SENIN - KAMIS
+                      <ol class="text-gray-300 ml-5 font-normal">
+                          <li>BUKA: 08.00 WIB</li>
+                          <li>ISTIRAHAT: 11.30 WIB - 12.30 WIB</li>
+                          <li>TUTUP: 15.00 WIB</li>
+                      </ol>
+                  </li>
+                  <li>JUM'AT
+                    <ol class="text-gray-300 ml-5 font-normal">
+                        <li>BUKA: 08.00 WIB</li>
+                        <li>ISTIRAHAT: 11.30 WIB - 12.30 WIB</li>
+                        <li>TUTUP: 15.30 WIB</li>
+                    </ol>
+                  </li>
+                  <li>SABTU & MINGGU
+                    <ol class="text-gray-300 ml-5 font-normal">
+                        <li>TIDAK ADA PELAYANAN</li>
+                    </ol>
+                  </li>
+              </ul>
+            </div>
+          </div>
         <h2 id="accordion-color-heading-3">
             <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left border border-b-0 focus:ring-4 focus:ring-blue-800 border-gray-700 text-gray-400  hover:bg-gray-800" data-accordion-target="#accordion-color-body-3" aria-expanded="false" aria-controls="accordion-color-body-3">
               <span>Syarat Pembuatan SKCK</span>
@@ -284,7 +315,7 @@
                     <h3 class="flex items-left mb-1 text-lg font-semibold text-white flex-col">Alur Perpanjangan SKCK<br>
                     <span class="text-lg w-fit font-medium mr-2 px-2.5 py-0.5 mb-3 rounded bg-gray-700 text-blue-400 border border-blue-400">Standart Waktu: 20 Menit</span><br>
                     <blockquote class="p-4 my-4 border-l-4 border-gray-500 bg-gray-800">
-                        <p class="text-lg italic font-medium leading-relaxed text-gray-300">"Masa Berlaku SKCK adalah 1 (satu) Tahun semenjak SKCK diterbitkan"</p>
+                        <p class="text-lg italic font-medium leading-relaxed text-gray-300">"Masa Berlaku SKCK adalah 6 (enam) Bulan semenjak SKCK diterbitkan"</p>
                     </blockquote></h3>
                     <ol class="relative border-l border-gray-700 text-gray-400">
                         <li class="mb-10 ml-6">

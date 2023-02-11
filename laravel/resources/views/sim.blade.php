@@ -21,6 +21,25 @@
                     <li class="glide__slide">
                         <div class="w-full rounded-lg shadow bg-gray-800 border-gray-700 h-96">
                             <div class="flex flex-col items-center pt-5">
+                                <img class="w-40 h-40 max-w-none mb-3 rounded-full border-4 border-blue-600 shadow-lg" src="{{URL::to('/')}}/media/sim/saikul.jpeg" alt="pers"/>
+                                <h5 class="mb-1 text-xl font-bold text-white">AIPDA SAIKUL ANAS</h5>
+                                <span class="text-sm text-gray-400 font-semibold">BINTARA URUSAN SIM</span>
+                            </div>
+                            <div class="flex flex-col items-left px-5 pb-5">
+                                <span class="text-sm text-gray-400">- PENDIDIKAN UMUM: SMK</span>
+                                <span class="text-sm text-left text-gray-400">
+                                    - DIKJUR/DIKLAT/SERTIFIKASI:
+                                    <ul class="list-disc ml-2 text-xs">
+                                        <li>DIKJUR PENGUJI SIM</li>
+                                        <li>PELATIHAN PENGUJI SIM</li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="w-full rounded-lg shadow bg-gray-800 border-gray-700 h-96">
+                            <div class="flex flex-col items-center pt-5">
                                 <img class="w-40 h-40 max-w-none mb-3 rounded-full border-4 border-blue-600 shadow-lg" src="{{URL::to('/')}}/media/sim/kardi.jpeg" alt="pers"/>
                                 <h5 class="mb-1 text-xl font-bold text-white">AIPDA KARDIANSYAH</h5>
                                 <span class="text-sm text-gray-400 font-semibold">BINTARA PEMBANTU BENMA SIM</span>
@@ -29,7 +48,7 @@
                                 <span class="text-sm text-gray-400">- PENDIDIKAN UMUM: SMA</span>
                                 <span class="text-sm text-left text-gray-400">
                                     - DIKJUR/DIKLAT/SERTIFIKASI:
-                                    <ul class="list-disc ml-10 text-xs">
+                                    <ul class="list-disc ml-2 text-xs">
                                         <li>PELATIHAN PENGUJI SIM</li>
                                         <li>SERTIFIKASI OPERATOR SIM</li>
                                     </ul>
@@ -48,12 +67,30 @@
                                 <span class="text-sm text-gray-400">- PENDIDIKAN UMUM: STRATA-1 (S-1)</span>
                                 <span class="text-sm text-left text-gray-400">
                                     - DIKJUR/DIKLAT/SERTIFIKASI:
-                                    <ul class="list-disc ml-10 text-xs">
+                                    <ul class="list-disc ml-2 text-xs">
                                         <li>DIKJUR LALU LINTAS DASAR</li>
                                         <li>PELATIHAN PENGUJI SIM</li>
                                         <li>PELATIHAN DIKMAS LANTAS</li>
                                         <li>PELATIHAN OPERATOR SIM</li>
                                         <li>SERTIFIKASI OPERATOR SIM</li>
+                                    </ul>
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="w-full rounded-lg shadow bg-gray-800 border-gray-700 h-96">
+                            <div class="flex flex-col items-center pt-5">
+                                <img class="w-40 h-40 max-w-none mb-3 rounded-full border-4 border-blue-600 shadow-lg" src="{{URL::to('/')}}/media/sim/irpan.jpeg" alt="pers"/>
+                                <h5 class="mb-1 text-xl font-bold text-white">BRIPKA IRPAN SAPUTRA</h5>
+                                <span class="text-sm text-gray-400 font-semibold">BINTARA UJIAN PRAKTIK SIM</span>
+                            </div>
+                            <div class="flex flex-col items-left px-5 pb-5">
+                                <span class="text-sm text-gray-400">- PENDIDIKAN UMUM: SMA</span>
+                                <span class="text-sm text-left text-gray-400">
+                                    - DIKJUR/DIKLAT/SERTIFIKASI:
+                                    <ul class="list-disc ml-2 text-xs">
+                                        <li>PELATIHAN PENINDAKAN PELANGGARAN</li>
                                     </ul>
                                 </span>
                             </div>
@@ -70,7 +107,7 @@
                                 <span class="text-sm text-gray-400">- PENDIDIKAN UMUM: SMA</span>
                                 <span class="text-sm text-left text-gray-400">
                                     - DIKJUR/DIKLAT/SERTIFIKASI:
-                                    <ul class="list-disc ml-10 text-xs">
+                                    <ul class="list-disc ml-2 text-xs">
                                         <li>PELATIHAN PENGUJI SIM</li>
                                         <li>SERTIFIKASI OPERATOR SIM</li>
                                     </ul>
@@ -89,7 +126,7 @@
                                 <span class="text-sm text-gray-400">- PENDIDIKAN UMUM: SMK</span>
                                 <span class="text-sm text-left text-gray-400">
                                     - DIKJUR/DIKLAT/SERTIFIKASI:
-                                    <ul class="list-disc ml-10 text-xs">
+                                    <ul class="list-disc ml-2 text-xs">
                                         <li>DIKJUR PENGAWALAN LALU LINTAS</li>
                                         <li>PELATIHAN PENGAWALAN VIP</li>
                                         <li>SERTIFIKASI OPERATOR SIM</li>
@@ -159,6 +196,37 @@
             
           </div>
         </div>
+        <h2 id="accordion-color-heading-11" class="font-bold">
+            <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left border border-b-0 focus:ring-4 focus:ring-blue-800 border-gray-700 text-gray-200 hover:bg-gray-800" data-accordion-target="#accordion-color-body-11" aria-expanded="false" aria-controls="accordion-color-body-11">
+              <span>Jadwal Pelayanan</span>
+              <svg data-accordion-icon class="w-6 h-6 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+          </h2>
+          <div id="accordion-color-body-11" class="hidden" aria-labelledby="accordion-color-heading-11">
+            <div class="p-5 border border-b-0 border-gray-700 bg-gray-900">
+              <ul class="text-gray-300 list-disc ml-5 font-semibold">
+                  <li>SENIN - KAMIS
+                      <ol class="text-gray-300 ml-5 font-normal">
+                          <li>BUKA: 08.00 WIB</li>
+                          <li>ISTIRAHAT: 11.30 WIB - 12.30 WIB</li>
+                          <li>TUTUP: 15.00 WIB</li>
+                      </ol>
+                  </li>
+                  <li>JUM'AT
+                    <ol class="text-gray-300 ml-5 font-normal">
+                        <li>BUKA: 08.00 WIB</li>
+                        <li>ISTIRAHAT: 11.30 WIB - 12.30 WIB</li>
+                        <li>TUTUP: 15.30 WIB</li>
+                    </ol>
+                  </li>
+                  <li>SABTU & MINGGU
+                    <ol class="text-gray-300 ml-5 font-normal">
+                        <li>TIDAK ADA PELAYANAN</li>
+                    </ol>
+                  </li>
+              </ul>
+            </div>
+          </div>
         <h2 id="accordion-color-heading-2">
           <button type="button" class="flex items-center justify-between w-full p-5 font-medium text-left border border-b-0 focus:ring-4 focus:ring-blue-800 border-gray-700 text-gray-400  hover:bg-gray-800" data-accordion-target="#accordion-color-body-2" aria-expanded="false" aria-controls="accordion-color-body-2">
             <span>Kategori Golongan SIM</span>

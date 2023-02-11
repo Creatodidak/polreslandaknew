@@ -101,8 +101,38 @@
     </head>
 
     <body style="background-color: #080e12">
-
-        <div id="helpbutton" class="fixed bottom-0 cursor-pointer left-5 z-40">
+        <div data-dial-init class="fixed bottom-0 left-5 group z-40">
+            <div id="speed-dial-menu-dropdown" class="flex flex-col justify-end hidden py-1 mb-4 space-y-2 border rounded-lg shadow-sm border-gray-600 bg-gray-700">
+                <ul class="text-sm text-gray-300">
+                    <li>
+                        <a href="#" class="flex items-center px-5 py-2 hover:bg-gray-600 hover:text-white">
+                            <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"></path></svg>
+                            <span class="text-lg font-semibold">Share</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-5 py-2 hover:bg-gray-600 hover:text-white">
+                            <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z" clip-rule="evenodd"></path></svg>
+                            <span class="text-lg font-semibold">Print</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-5 py-2 hover:bg-gray-600 hover:text-white">
+                            <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V8a2 2 0 00-2-2h-5L9 4H4zm7 5a1 1 0 00-2 0v1.586l-.293-.293a.999.999 0 10-1.414 1.414l2 2a.999.999 0 001.414 0l2-2a.999.999 0 10-1.414-1.414l-.293.293V9z" fill-rule="evenodd"></path></svg>
+                            <span class="text-lg font-semibold">Save</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="flex items-center px-5 py-2 hover:bg-gray-600 hover:text-white">
+                            <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 9a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H9a2 2 0 01-2-2V9z"></path><path d="M5 3a2 2 0 00-2 2v6a2 2 0 002 2V5h8a2 2 0 00-2-2H5z"></path></svg>
+                            <span class="text-lg font-semibold">Copy</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <img src="{{ asset('assets/img/help.png') }}" data-dial-toggle="speed-dial-menu-dropdown" aria-controls="speed-dial-menu-dropdown" aria-expanded="false" class="w-20 md:w-40 animate-pulse">
+        </div>
+        {{-- <div id="helpbutton" class="fixed bottom-0 cursor-pointer left-5 z-40">
             <img src="{{ asset('assets/img/help.png') }}" id="dropdownHoverButton"
                 data-dropdown-placement="top" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover"
                 class="w-20 md:w-30 animate-pulse" alt="">
@@ -126,7 +156,7 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> --}}
 
         <div id="welcome" class="w-screen h-screen fixed z-40 flex justify-center items-center"
             style="background: rgb(89,85,85);background: linear-gradient(45deg, rgba(89,85,85,0.7467319691548495) 0%, rgba(0,0,0,0.9568160027682948) 100%);">
@@ -147,7 +177,7 @@
 
         <header class="sticky top-0 z-10">
             <nav class="border-gray-200 px-4 lg:px-6 py-2.5 bg-gray-800">
-                <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+                <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-2xl">
                     <a href="#" class="flex items-center">
                         <img src="{{ URL::to('/') }}/<?= $c->logo ?>" class="mr-3 h-6 sm:h-9"
                             alt="Flowbite Logo" />

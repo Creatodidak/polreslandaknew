@@ -56,7 +56,7 @@
         <li>cccc</li>
     </ul>
 </div> --}}
-<section class="flex justify-center align-middle flex-col w-full md:w-4/5 mx-auto p-6">
+{{-- <section class="flex justify-center align-middle flex-col w-full md:w-4/5 mx-auto p-6">
     <div class="flex justify-center align-middle flex-row">
         <div class="basis-full md:basis-3/5 bg-gradient-to-b from-gray-900 to-gray-500 p-4 rounded-t-lg">
             <p class="text-2xl text-center text-white font-bold">JADWAL PELAYANAN POLRES LANDAK</p>
@@ -148,7 +148,7 @@
             </ul>
         </div>
     </div>
-</section>
+</section> --}}
 <section class="flex justify-center align-middle flex-col md:flex-row">
     <div class="basis-full md:basis-4/5">
         <div class="w-full grid grid-flow-row gap-8 sm:grid-cols-1 md:grid-cols-3 p-2" id="listberita">
