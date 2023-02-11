@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta property="fb:app_id" content="342797811136983" />
+    <title>ADMIN FAQ ZI POLRES LANDAK</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="description"
+            content="Selamat Datang Di Website Kepolisian Resor Landak, Polda Kalimantan Barat | POLRES LANDAK #SIAP MENUJU WBK DAN WBBM">
+    <meta name="keywords" content="polri, polisi, landak, kalimantan barat, polres, polres landak, polda kalbar">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="id">
+    <meta name="revisit-after" content="1 days">
+    <meta name="author" content="CREATODIDAK.ID">
+
+        <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ADMIN FAQ ZI POLRES LANDAK">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:image" content="{{ url('/') }}/assets/img/og.jpg">
+    <meta property="og:description"
+            content="Selamat Datang Di Website Kepolisian Resor Landak, Polda Kalimantan Barat | POLRES LANDAK #SIAP MENUJU WBK DAN WBB">
+    <meta property="og:site_name" content="POLRES LANDAK PRESISI">
+    <meta property="og:locale" content="id_ID">
+
+        <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ADMIN FAQ ZI POLRES LANDAK">
+    <meta name="twitter:description"
+            content="Selamat Datang Di Website Kepolisian Resor Landak, Polda Kalimantan Barat | POLRES LANDAK #SIAP MENUJU WBK DAN WBB">
+    <meta name="twitter:image" content="{{ url('/') }}/assets/img/og.jpg">
     <meta name="csrf_token" content="{{ csrf_token() }}" />
     @vite('resources/css/app.css')
 
