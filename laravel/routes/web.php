@@ -17,6 +17,7 @@ Route::post('/register/add', $cnt.'Cregister@add');
 Route::get('/anggaran', $cnt.'Canggaran@index');
 Route::get('/sim', $cnt.'Cinformasi@sim');
 Route::get('/skck', $cnt.'Cinformasi@skck');
+Route::get('/identifikasi', $cnt.'Cinformasi@identifikasi');
 Route::get('/zonaintegritas', $cnt.'Czonaintegritas@index');
 Route::get('/faq', $cnt.'Cfaq@index');
 Route::get('/faqadmin', $cnt.'Cfaq@admin');
