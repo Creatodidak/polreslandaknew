@@ -88,12 +88,32 @@
                             </div>
                             <div class="flex flex-col items-left px-5 pb-5">
                                 <span class="text-sm text-gray-400">- PENDIDIKAN UMUM: SMA</span>
-                                {{-- <span class="text-sm text-left text-gray-400">
+                                <span class="text-sm text-left text-gray-400">
                                     - DIKJUR/DIKLAT/SERTIFIKASI:
                                     <ul class="list-disc ml-10 text-xs">
-                                        <li class="uppercase"></li>
+                                        <li class="uppercase">Pelatihan Polmas 2 </li>
+                                        <li class="uppercase">Pelatihan Brigadir Gakum Lantas </li>
+                                        <li class="uppercase">Pelatihan Bintara Instruktur SAR </li>
                                     </ul>
-                                </span> --}}
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="w-full rounded-lg shadow bg-gray-800 border-gray-700 h-96">
+                            <div class="flex flex-col items-center pt-5">
+                                <img class="w-40 h-40 max-w-none mb-3 rounded-full border-4 border-black shadow-lg" src="{{URL::to('/')}}/media/spkt/parluhutan.jpg" alt="pers"/>
+                                <h5 class="mb-1 text-xl font-bold text-white">AIPTU PARLUHUTAN</h5>
+                                <span class="text-sm text-gray-400 font-semibold">PS. KANIT SPKT II</span>
+                            </div>
+                            <div class="flex flex-col items-left px-5 pb-5">
+                                <span class="text-sm text-gray-400">- PENDIDIKAN UMUM: SMA</span>
+                                <span class="text-sm text-left text-gray-400">
+                                    - DIKJUR/DIKLAT/SERTIFIKASI:
+                                    <ul class="list-disc ml-10 text-xs">
+                                        <li class="uppercase">PELATIHAN BINTARA BINMAS PERAIRAN</li>
+                                    </ul>
+                                </span>
                             </div>
                         </div>
                     </li>
