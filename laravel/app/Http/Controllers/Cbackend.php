@@ -26,64 +26,29 @@ class Cbackend extends Controller
     public function getotp(Request $request){
         $validator = Validator::make($request->all(), [
             'nrp' => 'required|min:8|max:8',
+            'password' => 'required'
         ]);
 
         if ($validator->fails()) {
-            return redirect('/login')->with(['error' => 'NRP SALAH!']);
+            return redirect('/login')->with(['error' => 'NRP / PASSWORD SALAH!']);
         }else{
-            $login = Backend::where('nrp', $request->nrp);
-            $otp = rand(123456, 999999);
-            if($login->count() != 0){
-               $upd =  $login->update(['expires_at' => Carbon::now()->addMinutes(60), 'otp' => $otp]);
-
-               if($upd){
-                foreach(Personil::where('nrp', $request->nrp)->get() as $p){
-                    $wa = $p->wa;
+            if(Backend::where('nrp', $request->nrp)->count() != 0){
+                if(Backend::where('nrp', $request->nrp)->where('password', md5($request->password))->count() != 0){
+                    foreach(Personil::where('nrp', $request->nrp)->get() as $l){
+                                                                        session(['nama' => $l->nama,
+                                                                                'nrp' => $l->nrp,
+                                                                                'pangkat' => $l->pangkat,
+                                                                                'satker' => $l->satker,
+                                                                                'satfung' => $l->satfung,
+                                                                                'foto' => $l->foto]);
+                    }
+                    return redirect('/backend/dashboard');
+                }else{
+                    return redirect('/login')->with(['error' => 'PASSWORD SALAH!']);
                 }
-                $data = [
-                    'api_key' => '9u5OizNhKkJCr37qLH6VoKmxqu00wR',
-                    'sender' => '628115664145',
-                    'number' => $wa,
-                    'message' => '-
-                    *POLRES LANDAK PRESISI*
-                    
-                    KODE OTP ANDA ADALAH [ *'.$otp.'* ]
-                    
-                    KODE INI HANYA BERLAKU SELAMA 60 MENIT, *TETAP SEMANGAT!*'
-                ];
-                $curl = curl_init();
-                
-                curl_setopt_array($curl, array(
-                  CURLOPT_URL => 'https://server.wa-bisnis.com/send-message',
-                  CURLOPT_RETURNTRANSFER => true,
-                  CURLOPT_ENCODING => '',
-                  CURLOPT_MAXREDIRS => 10,
-                  CURLOPT_TIMEOUT => 0,
-                  CURLOPT_FOLLOWLOCATION => true,
-                  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-                  CURLOPT_CUSTOMREQUEST => 'POST',
-                  CURLOPT_POSTFIELDS => json_encode($data),
-                  CURLOPT_HTTPHEADER => array(
-                    'Content-Type: application/json'
-                  ),
-                ));
-                
-                $response = curl_exec($curl);
-                
-                curl_close($curl);
-                
-                session(['otp' => $otp, 'nrp' => $request->nrp, 'wa' => $wa]);
-
-                if($response){
-                    return view('validasi');
-                }
-               }else{
-                return redirect('/login')->with(['error' => 'GAGAL LOGIN, COBA LAGI!']);
-               }
             }else{
-                return redirect('/login')->with(['error' => 'NRP SALAH!']);
+                return redirect('/login')->with(['error' => 'NRP TIDAK DITEMUKAN!']);
             }
-            
         }
     }
 
@@ -94,16 +59,7 @@ class Cbackend extends Controller
         $lotp = Backend::select('otp')->where('nrp', $nrp)->get()['0']->otp;
 
         if($lotp == $otp){
-            foreach(Personil::where('nrp', $nrp)->get() as $l){
-                    session(['nama' => $l->nama,
-                             'nrp' => $l->nrp,
-                             'pangkat' => $l->pangkat,
-                             'satker' => $l->satker,
-                             'satfung' => $l->satfung,
-                             'foto' => $l->foto
-            ]);
-                }
-            return redirect('/backend/dashboard');
+            
         }else{
             return redirect('/login')->with(['error' => 'OTP SALAH!']);
         }
@@ -159,7 +115,7 @@ class Cbackend extends Controller
     public function addberita(Request $request){
         $validator = Validator::make($request->all(), [
             'judul' => 'required|min:8',
-            'penulis' => 'required|min:8',
+            'penulis' => 'required|min:3',
             'isi' => 'required|min:8',
             'kategori' => 'required|min:8',
             'caption' => 'required|min:8',
@@ -167,7 +123,7 @@ class Cbackend extends Controller
         ]);
 
         if ($validator->fails()){
-            return redirect('/backend/inputberita')->with(['addno' => 'GAGAL INPUT BERITA, PERIKSA ISI BERITA ANDA!']);
+            return response()->json(['msg' => $validator->errors()]);
         }else{
             if(Berita::where('judul', $request->judul)->count() == 0){
                 $image = $request->file('file');
@@ -187,7 +143,7 @@ class Cbackend extends Controller
                         'judul' => str_replace('*', '', strtoupper($request->judul)),
                         'link' =>  str_replace(' ', '-',strtolower(str_replace( array( '\'', '"', ',' , ';', '<', '>' ), '', $request->judul))),
                         'penulis' => $request->penulis,
-                        'isi' => $request->isi,
+                        'isi' => nl2br($request->isi),
                         'kategori' => $request->kategori,
                         'caption' => $request->caption,
                         'foto' => '/media/berita/'.$imageName,
@@ -199,15 +155,19 @@ class Cbackend extends Controller
                     ]);
 
                     if($ins){
-                        return redirect('/backend/inputberita')->with(['addok' => 'OK']);
+                        // return redirect('/backend/inputberita')->with(['addok' => 'OK']);
+                        return response()->json(['msg' => 'ok']);
                     }else{
-                        return redirect('/backend/inputberita')->with(['addno' => 'GAGAL INPUT BERITA DI DATABASE! HUBUNGI ADMIN!']);    
+                        // return redirect('/backend/inputberita')->with(['addno' => 'GAGAL INPUT BERITA DI DATABASE! HUBUNGI ADMIN!']);    
+                        return response()->json(['msg' => 'GAGAL INPUT BERITA DI DATABASE, HUBUNGI ADMIN!']);
                     }
                 }else{
-                    return redirect('/backend/inputberita')->with(['addno' => 'GAGAL INPUT BERITA KARENA GAMBAR TIDAK DAPAT DIUPLOAD']);
+                    // return redirect('/backend/inputberita')->with(['addno' => 'GAGAL INPUT BERITA KARENA GAMBAR TIDAK DAPAT DIUPLOAD']);
+                    return response()->json(['msg' => 'GAMBAR GAGAL DI UPLOAD!']);
                 }
             }else{
-                return redirect('/backend/inputberita')->with(['addno' => 'BERITA INI SUDAH ANDA UPLOAD SEBELUMNYA!']);
+                // return redirect('/backend/inputberita')->with(['addno' => 'BERITA INI SUDAH ANDA UPLOAD SEBELUMNYA!']);
+                return response()->json(['msg' => 'BERITA SUDAH PERNAH DIINPUT!']);
             }
         }
    

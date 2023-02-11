@@ -41,16 +41,16 @@ $nama = explode(' ', trim($sentence ))[0];
     <div class="flex flex-col mt-1 px-5 py-3 text-gray-300 border rounded-lg bg-gray-800 border-gray-700 md:w-3/4 3xl:w-full md:m-auto">
         <p class="text-xl font-bold mb-10">Masukan Rincian Berita Anda</p>
 
-        <form action="/backend/berita/addberita" method="post" enctype="multipart/form-data" class="flex flex-col">
+        <form id="addberitaform" method="post" enctype="multipart/form-data" class="flex flex-col">
             @csrf
             <p class="text-base text-gray-300 py-1">Judul Berita<span class="text-red-500">*</span></p>
-            <input type="text" id="judul" name="judul" class="p-2 rounded-md bg-gray-700 text-white border-2 border-blue-400 text-lg" required>
+            <input type="text" autocomplete="off" id="judul" name="judul" class="p-2 rounded-md bg-gray-700 text-white border-2 border-blue-400 text-lg" required>
             <p class="text-base text-gray-300 py-1">Penulis<span class="text-red-500">*</span></p>
-            <input type="text" id="penulis" name="penulis" class="p-2 rounded-md bg-gray-700 text-white border-2 border-blue-400 text-lg" required>
+            <input type="text" autocomplete="off" id="penulis" name="penulis" class="p-2 rounded-md bg-gray-700 text-white border-2 border-blue-400 text-lg" required>
             <p class="text-base text-gray-300 py-1">Isi Berita<span class="text-red-500">*</span></p>
-            <textarea id="isi" name="isi" class="p-2 rounded-md bg-gray-700 text-white border-2 border-blue-400 text-lg" required></textarea>
+            <textarea autocomplete="off" id="isi" name="isi" class="p-2 rounded-md bg-gray-700 text-white border-2 border-blue-400 text-lg" rows="15" required></textarea>
             <p class="text-base text-gray-300 py-1">Kategori Berita<span class="text-red-500">*</span></p>
-            <select id="kategori" class="p-2 rounded-md bg-gray-700 text-white border-2 border-blue-400 text-lg" name="kategori" required>
+            <select id="kategori" autocomplete="off" class="p-2 rounded-md bg-gray-700 text-white border-2 border-blue-400 text-lg" name="kategori" required>
                 <option value="">PILIH KATEGORI</option>
                 @foreach ($kategori as $k)
                     <option value="<?= $k->kategori ?>"><?= $k->kategori ?></option>
@@ -63,12 +63,13 @@ $nama = explode(' ', trim($sentence ))[0];
                         <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
                         <p class="mb-2 text-sm text-gray-400"><span class="font-semibold">Pilih Gambar</span></p>
                         <p class="text-xs text-gray-400">Hanya File Gambar (*jpg, *jpeg, *png)</p>
+                        <p class="text-xs text-gray-400">Maksimal 2 MB</p>
                     </div>
                     <input id="file" name="file" type="file" class="hidden" accept="image/*" onchange="onFileUpload(this)" required/>
                 </label>
             </div> 
             <p class="text-base text-gray-300 py-1">Caption Foto<span class="text-red-500">*</span></p>
-            <input type="text" id="caption" name="caption" class="p-2 rounded-md bg-gray-700 text-white border-2 border-blue-400 text-lg" required>
+            <input type="text" autocomplete="off" id="caption" name="caption" class="p-2 rounded-md bg-gray-700 text-white border-2 border-blue-400 text-lg" required>
             <button type="submit" class="p-3 my-4 mx-2 rounded-md text-white bg-blue-600 font-bold">PUBLISH</button>
         </form>
 
@@ -87,6 +88,38 @@ $nama = explode(' ', trim($sentence ))[0];
 <script src="{{ asset('ckeditor2/ckeditor.js') }}"></script>
 <script src="{{ asset('ckeditor2/adapters/jquery.js') }}"></script>
 
+<script>
+    $('#addberitaform').submit(function (e) { 
+        e.preventDefault();
+        var fd = new FormData(this);    
+        $.ajax({
+            type: "POST",
+            method: "POST",
+            url: "/backend/berita/addberita",
+            data: new FormData(this),
+            processData: false,
+            contentType: false,
+            cache: false,
+            dataType: "json",
+            success: function (response) {
+                if(response.msg == 'ok'){
+                    Swal.fire({
+                        title: 'BERHASIL INPUT BERITA',
+                        icon: 'success'
+                    }).then((result) => {
+                        location.reload();
+                    })
+                }else{
+                    Swal.fire({
+                        title: 'GAGAL INPUT BERITA',
+                        text: response.msg,
+                        icon: 'error'
+                    })
+                }
+            }
+        });
+    });
+</script>
 <?php if($session->get('addok') != null){?>
     <script> Swal.fire({
         title: "Berita Berhasil Dipublish!",
@@ -105,19 +138,27 @@ $nama = explode(' ', trim($sentence ))[0];
     <?php
     }?>
     <script>
-       CKEDITOR.replace('isi', {
-            height: 500,
-       }); 
+
 
        function onFileUpload(input, id) {
-            id = id || '#fotoform';
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    // $(id).attr('src', e.target.result).width(300)
-                    $(id).html('<img src="'+e.target.result+'" alt="" width="320px" style="height:240px">');
-                };
-                reader.readAsDataURL(input.files[0]);
+            
+            if((input.files[0].size/1000000).toFixed(2) <= '2'){
+                id = id || '#fotoform';
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        // $(id).attr('src', e.target.result).width(300)
+                        $(id).html('<img src="'+e.target.result+'" alt="" width="320px" style="height:240px">');
+                        console.log(e);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }else{
+                Swal.fire({
+                    title: 'GAMBAR DIATAS 2MB!',
+                    text: 'Ukuran File anda adalah \n'+(input.files[0].size/1000000).toFixed(2)+' Mb',
+                    icon: 'error'
+                })
             }
         }
     </script>

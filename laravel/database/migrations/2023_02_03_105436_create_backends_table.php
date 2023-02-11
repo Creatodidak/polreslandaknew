@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('backends', function (Blueprint $table) {
             $table->id();
             $table->string('nrp');
-            $table->string('otp');
+            $table->string('password');
             $table->string('level');
             $table->timestamp('expires_at')->nullable();
             $table->timestamps();

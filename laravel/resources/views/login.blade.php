@@ -40,10 +40,11 @@
                 </button>
             </div>
             <?php } ?>
-            <form action="backend/getotp" method="post">
+            <form action="backend/getotp" method="post" class="flex flex-col">
             @csrf
-            <input type="text" name="nrp" id="nrp" class="p-2 mx-auto w-full text-white font-bold bg-gray-700 rounded-lg text-center" placeholder="NRP" required>
-            <button class="block py-2 mx-auto mt-3 pr-4 pl-3 text-white rounded bg-blue-700" id="login">MINTA OTP</button>
+            <input type="text" name="nrp" id="nrp" class="p-2 mx-auto mb-2 w-full text-white font-bold bg-gray-700 rounded-lg text-center" placeholder="NRP" autocomplete="off" required>
+            <input type="password" name="password" id="password" class="p-2 mb-2 mx-auto w-full text-white font-bold bg-gray-700 rounded-lg text-center" autocomplete="off" placeholder="PASSWORD" required>
+            <button type="submit" class="block py-2 mx-auto mt-3 pr-4 pl-3 text-white rounded bg-blue-700" id="login">LOGIN</button>
             </form>
         </div>
     </div>
@@ -55,17 +56,18 @@
 <script src="{{ asset('assets/js/sw.js') }}"></script>
 
 <script>
-    $('#login').click(function (e) { 
-        e.preventDefault();
-        Swal.fire({
-            title: 'Menghubungi Server OTP...',
-            allowOutsideClick: false,
-                    didOpen: () => {
-                        Swal.showLoading()}
-        })
-    });
+    // $('#login').click(function (e) { 
+    //     e.preventDefault();
+    //     Swal.fire({
+    //         title: 'Menghubungi Server OTP...',
+    //         allowOutsideClick: false,
+    //                 didOpen: () => {
+    //                     Swal.showLoading()}
+    //     })
 
-    clic
+    //     return true;
+    // });
+
 </script>
 
 </html>
