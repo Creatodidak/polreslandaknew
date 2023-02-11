@@ -16,11 +16,35 @@
         <meta name="revisit-after" content="1 days">
         <meta name="author" content="CREATODIDAK.ID">
 
+        <?php if(request()->segment(1) == 'sim'){?>
+            <meta property="og:image" content="{{ url('/') }}/assets/img/sim.png">
+            <meta name="twitter:image" content="{{ url('/') }}/assets/img/sim.png">
+        <?php } ?>
+
+        <?php if(request()->segment(1) == 'spkt'){?>
+            <meta property="og:image" content="{{ url('/') }}/assets/img/spkt.png">
+            <meta name="twitter:image" content="{{ url('/') }}/assets/img/spkt.png">
+        <?php } ?>
+
+        <?php if(request()->segment(1) == 'identifikasi'){?>
+            <meta property="og:image" content="{{ url('/') }}/assets/img/iden.png">
+            <meta name="twitter:image" content="{{ url('/') }}/assets/img/iden.png">
+        <?php } ?>
+
+        <?php if(request()->segment(1) == 'skck'){?>
+            <meta property="og:image" content="{{ url('/') }}/assets/img/skck.png">
+            <meta name="twitter:image" content="{{ url('/') }}/assets/img/skck.png">
+        <?php } ?>
+
+        <?php if(request()->segment(1) == null){?>
+            <meta property="og:image" content="{{ url('/') }}/assets/img/og.jpg">
+            <meta name="twitter:image" content="{{ url('/') }}/assets/img/og.jpg">
+        <?php } ?>
+
         <!-- Open Graph Meta Tags -->
         <meta property="og:title" content="<?= $judul ?> | <?= $c->namasitus ?>">
         <meta property="og:type" content="article">
         <meta property="og:url" content="{{ url('/') }}">
-        <meta property="og:image" content="{{ url('/') }}/assets/img/og.jpg">
         <meta property="og:description"
             content="Selamat Datang Di Website Kepolisian Resor Landak, Polda Kalimantan Barat | POLRES LANDAK #SIAP MENUJU WBK DAN WBB">
         <meta property="og:site_name" content="POLRES LANDAK PRESISI">
@@ -31,7 +55,6 @@
         <meta name="twitter:title" content="<?= $judul ?> | <?= $c->namasitus ?>">
         <meta name="twitter:description"
             content="Selamat Datang Di Website Kepolisian Resor Landak, Polda Kalimantan Barat | POLRES LANDAK #SIAP MENUJU WBK DAN WBB">
-        <meta name="twitter:image" content="{{ url('/') }}/assets/img/og.jpg">
         <?php }else{
             foreach($data as $d):?>
         <title><?= $d->judul ?> - <?= $c->namasitus ?></title>
