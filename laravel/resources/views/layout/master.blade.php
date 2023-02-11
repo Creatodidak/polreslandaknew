@@ -17,23 +17,23 @@
         <meta name="author" content="CREATODIDAK.ID">
 
         <?php if(request()->segment(1) == 'sim'){?>
-            <meta property="og:image" content="{{ url('/') }}/assets/img/sim.png">
-            <meta name="twitter:image" content="{{ url('/') }}/assets/img/sim.png">
+            <meta property="og:image" content="{{ url('/') }}/assets/img/sim.jpg">
+            <meta name="twitter:image" content="{{ url('/') }}/assets/img/sim.jpg">
         <?php } ?>
 
         <?php if(request()->segment(1) == 'spkt'){?>
-            <meta property="og:image" content="{{ url('/') }}/assets/img/spkt.png">
-            <meta name="twitter:image" content="{{ url('/') }}/assets/img/spkt.png">
+            <meta property="og:image" content="{{ url('/') }}/assets/img/spkt.jpg">
+            <meta name="twitter:image" content="{{ url('/') }}/assets/img/spkt.jpg">
         <?php } ?>
 
         <?php if(request()->segment(1) == 'identifikasi'){?>
-            <meta property="og:image" content="{{ url('/') }}/assets/img/iden.png">
-            <meta name="twitter:image" content="{{ url('/') }}/assets/img/iden.png">
+            <meta property="og:image" content="{{ url('/') }}/assets/img/iden.jpg">
+            <meta name="twitter:image" content="{{ url('/') }}/assets/img/iden.jpg">
         <?php } ?>
 
         <?php if(request()->segment(1) == 'skck'){?>
-            <meta property="og:image" content="{{ url('/') }}/assets/img/skck.png">
-            <meta name="twitter:image" content="{{ url('/') }}/assets/img/skck.png">
+            <meta property="og:image" content="{{ url('/') }}/assets/img/skck.jpg">
+            <meta name="twitter:image" content="{{ url('/') }}/assets/img/skck.jpg">
         <?php } ?>
 
         <?php if(request()->segment(1) == null){?>
