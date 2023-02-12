@@ -105,29 +105,29 @@
             <div id="speed-dial-menu-dropdown" class="flex flex-col justify-end hidden py-1 mb-4 space-y-2 border rounded-lg shadow-sm border-gray-600 bg-gray-700">
                 <ul class="text-sm text-gray-300">
                     <li>
-                        <a href="#" class="flex items-center px-5 py-2 hover:bg-gray-600 hover:text-white">
-                            <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"></path></svg>
-                            <span class="text-lg font-semibold">Share</span>
+                        <a href="tel:110" class="flex items-center px-5 py-2 hover:bg-gray-600 hover:text-white">
+                            <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" stroke-linecap="round" stroke-linejoin="round"></path>
+                              </svg>
+                            <span class="text-lg font-semibold">Layanan Polisi 110</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center px-5 py-2 hover:bg-gray-600 hover:text-white">
-                            <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v2a2 2 0 002 2h6a2 2 0 002-2v-2h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v4h6v-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-lg font-semibold">Print</span>
+                        <a href="https://api.whatsapp.com/send?phone=62811567110&text=Saya%20Butuh%20Bantuan..." class="flex items-center px-5 py-2 hover:bg-gray-600 hover:text-white">
+                            <i class="fab fa-whatsapp w-4 h-4 mr-2"></i><span class="text-lg font-semibold">Whatsapp Bantuan SPKT</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="flex items-center px-5 py-2 hover:bg-gray-600 hover:text-white">
-                            <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V8a2 2 0 00-2-2h-5L9 4H4zm7 5a1 1 0 00-2 0v1.586l-.293-.293a.999.999 0 10-1.414 1.414l2 2a.999.999 0 001.414 0l2-2a.999.999 0 10-1.414-1.414l-.293.293V9z" fill-rule="evenodd"></path></svg>
-                            <span class="text-lg font-semibold">Save</span>
+                        <a href="https://api.whatsapp.com/send?phone=6289527006966&text=*LAPOR!*%20Saya%20menemukan%20adanya%20pungli!" class="flex items-center px-5 py-2 hover:bg-gray-600 hover:text-white">
+                            <i class="fab fa-whatsapp w-4 h-4 mr-2"></i><span class="text-lg font-semibold">Whatsapp Dumas Presisi</span>
                         </a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="#" class="flex items-center px-5 py-2 hover:bg-gray-600 hover:text-white">
                             <svg aria-hidden="true" class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M7 9a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H9a2 2 0 01-2-2V9z"></path><path d="M5 3a2 2 0 00-2 2v6a2 2 0 002 2V5h8a2 2 0 00-2-2H5z"></path></svg>
                             <span class="text-lg font-semibold">Copy</span>
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
             <img src="{{ asset('assets/img/help.png') }}" data-dial-toggle="speed-dial-menu-dropdown" aria-controls="speed-dial-menu-dropdown" aria-expanded="false" class="w-20 md:w-40 animate-pulse">

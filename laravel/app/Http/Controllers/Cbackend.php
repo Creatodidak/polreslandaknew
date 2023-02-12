@@ -141,7 +141,7 @@ class Cbackend extends Controller
                 if($do){
                     $ins = Berita::create([
                         'judul' => str_replace('*', '', strtoupper($request->judul)),
-                        'link' =>  str_replace(' ', '-',strtolower(str_replace( array( '\'', '"', ',' , ';', '<', '>' ), '', $request->judul))),
+                        'link' =>  str_replace(' ', '-',strtolower(str_replace( array( '\'', '"', ',' , '.' , ';', '<', '>' ), '', $request->judul))),
                         'penulis' => $request->penulis,
                         'isi' => nl2br($request->isi),
                         'kategori' => $request->kategori,

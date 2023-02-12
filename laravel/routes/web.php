@@ -26,7 +26,7 @@ Route::get('/faqadminval/{nrp}/{pelayanan}', $cnt.'Cfaq@validasi');
 Route::get('/faqdata/{pelayanan}', $cnt.'Cfaq@data');
 Route::post('/faqadd', $cnt.'Cfaq@add');
 Route::get('/faqdel/{id}', $cnt.'Cfaq@del');
-
+Route::get('/epustaka', $cnt.'Cepustaka@index');
 
 Route::get('berita/{link}', $cnt.'Cberita@index');
 Route::get('berita/more/{limit}', $cnt.'Cberita@more');
