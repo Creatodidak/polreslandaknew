@@ -13,18 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('epustakas', function (Blueprint $table) {
+        Schema::create('epustakaadmins', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
-            $table->string('nomor');
-            $table->string('tentang');
             $table->string('satker');
             $table->string('satfung');
-            $table->string('tanggal');
-            $table->string('validasi');
-            $table->string('uploader');
-            $table->string('file')->nullable();
-            $table->string('qrfile');            
+            $table->string('password');
             $table->timestamps();
         });
     }
@@ -36,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('epustakas');
+        Schema::dropIfExists('epustakaadmins');
     }
 };

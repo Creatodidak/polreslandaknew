@@ -26,7 +26,17 @@ Route::get('/faqadminval/{nrp}/{pelayanan}', $cnt.'Cfaq@validasi');
 Route::get('/faqdata/{pelayanan}', $cnt.'Cfaq@data');
 Route::post('/faqadd', $cnt.'Cfaq@add');
 Route::get('/faqdel/{id}', $cnt.'Cfaq@del');
+Route::get('/epustaka/dashboard', $cnt.'Cepustaka@dashboard');
+Route::post('/epustaka/add', $cnt.'Cepustaka@add');
+Route::post('/epustaka/addfile', $cnt.'Cepustaka@addfile');
+Route::post('/epustaka/qr', $cnt.'Cepustaka@dqr');
+Route::get('/epustaka/login', $cnt.'Cepustaka@login');
+Route::post('/epustaka/validasi', $cnt.'Cepustaka@validasi');
+Route::get('/epustaka/logout', $cnt.'Cepustaka@logout');
+Route::get('/epustaka/del/{id}', $cnt.'Cepustaka@del');
 Route::get('/epustaka', $cnt.'Cepustaka@index');
+Route::post('/epustaka/search', $cnt.'Cepustaka@search');
+Route::get('/epustaka/val/{kode}', $cnt.'Cepustaka@val');
 
 Route::get('berita/{link}', $cnt.'Cberita@index');
 Route::get('berita/more/{limit}', $cnt.'Cberita@more');

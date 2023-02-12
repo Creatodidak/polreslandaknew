@@ -149,6 +149,129 @@
         </div>
     </div>
 </section> --}}
+<div class="p-5 border border-b-0 border-gray-700 bg-gray-900 flex flex-col  justify-center">
+    <span class="text-gray-100 text-2xl font-bold text-center mx-auto">DATA REALISASI ANGGARAN POLRES LANDAK TAHUN 2023</span>
+    <div class="relative overflow-x-auto max-h-half shadow-md cursor-all-scroll text-white">
+        <table id="example" class="display w-full text-xs font-bold text-gray-900 rounded-lg bg-gray-400 m-1 md:m-5">
+            <thead class="text-sm bg-gray-900 rounded-md text-gray-400 sticky top-0">
+                <tr>
+                    <th class="dt-center border border-black p-2">NO</th>
+                    <th class="dt-center border border-black p-2">SATUAN KERJA</th>
+                    <th class="dt-center border border-black p-2">PAGU</th>
+                    <th class="dt-center border border-black p-2">JAN</th>
+                    <th class="dt-center border border-black p-2">FEB</th>
+                    <th class="dt-center border border-black p-2">MAR</th>
+                    <th class="dt-center border border-black p-2">APR</th>
+                    <th class="dt-center border border-black p-2">MEI</th>
+                    <th class="dt-center border border-black p-2">JUN</th>
+                    <th class="dt-center border border-black p-2">JUL</th>
+                    <th class="dt-center border border-black p-2">AGS</th>
+                    <th class="dt-center border border-black p-2">SEP</th>
+                    <th class="dt-center border border-black p-2">OKT</th>
+                    <th class="dt-center border border-black p-2">NOV</th>
+                    <th class="dt-center border border-black p-2">DES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if($pagu == '0'){$pagu = '1';} ?>
+                <?php $no = 1; ?>
+                @foreach($anggaran as $l)
+                    <tr class="border border-black hover:bg-white">
+                        <td class="p-2 border border-black text-center"><?= $no++ ?></td>
+                        <td class="p-2 border border-black whitespace-nowrap"><?= $l->satker ?></td>
+                        <td class="p-2 text-center border border-black whitespace-nowrap">
+                            <?php if($l->pagu == '0'){echo '-';}else{echo 'Rp. '.number_format($l->pagu,0,',','.');} ?>
+                        </td>
+                        <td class="p-2 text-center border border-black whitespace-nowrap">
+                            <?php if($l->jan == '0'){echo '-';}else{echo 'Rp. '.number_format($l->jan,0,',','.');} ?>
+                        </td>
+                        <td class="p-2 text-center border border-black whitespace-nowrap">
+                            <?php if($l->feb == '0'){echo '-';}else{echo 'Rp. '.number_format($l->feb,0,',','.');} ?>
+                        </td>
+                        <td class="p-2 text-center border border-black whitespace-nowrap">
+                            <?php if($l->mar == '0'){echo '-';}else{echo 'Rp. '.number_format($l->mar,0,',','.');} ?>
+                        </td>
+                        <td class="p-2 text-center border border-black whitespace-nowrap">
+                            <?php if($l->apr == '0'){echo '-';}else{echo 'Rp. '.number_format($l->apr,0,',','.');} ?>
+                        </td>
+                        <td class="p-2 text-center border border-black whitespace-nowrap">
+                            <?php if($l->mei == '0'){echo '-';}else{echo 'Rp. '.number_format($l->mei,0,',','.');} ?>
+                        </td>
+                        <td class="p-2 text-center border border-black whitespace-nowrap">
+                            <?php if($l->jun == '0'){echo '-';}else{echo 'Rp. '.number_format($l->jun,0,',','.');} ?>
+                        </td>
+                        <td class="p-2 text-center border border-black whitespace-nowrap">
+                            <?php if($l->jul == '0'){echo '-';}else{echo 'Rp. '.number_format($l->jul,0,',','.');} ?>
+                        </td>
+                        <td class="p-2 text-center border border-black whitespace-nowrap">
+                            <?php if($l->agu == '0'){echo '-';}else{echo 'Rp. '.number_format($l->agu,0,',','.');} ?>
+                        </td>
+                        <td class="p-2 text-center border border-black whitespace-nowrap">
+                            <?php if($l->sep == '0'){echo '-';}else{echo 'Rp. '.number_format($l->sep,0,',','.');} ?>
+                        </td>
+                        <td class="p-2 text-center border border-black whitespace-nowrap">
+                            <?php if($l->okt == '0'){echo '-';}else{echo 'Rp. '.number_format($l->okt,0,',','.');} ?>
+                        </td>
+                        <td class="p-2 text-center border border-black whitespace-nowrap">
+                            <?php if($l->nov == '0'){echo '-';}else{echo 'Rp. '.number_format($l->nov,0,',','.');} ?>
+                        </td>
+                        <td class="p-2 text-center border border-black whitespace-nowrap">
+                            <?php if($l->des == '0'){echo '-';}else{echo 'Rp. '.number_format($l->des,0,',','.');} ?>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+            <tfoot class="text-xs bg-gray-900 rounded-md text-gray-400 sticky bottom-0">
+                <tr>
+                    <th class="dt-center border border-black p-2"></th>
+                    <th class="dt-center border border-black p-2 whitespace-nowrap">TOTAL</th>
+                    <th class="dt-center border border-black p-2 whitespace-nowrap">
+                        <?= 'Rp. '.number_format($pagu,0,',','.') ?></th>
+                    <th class="dt-center border border-black p-2 whitespace-nowrap">
+                        <?= 'Rp. '.number_format($jan,0,',','.') ?><br><?= round((($jan/$pagu)*100), 2).'%' ?>
+                    </th>
+                    <th class="dt-center border border-black p-2 whitespace-nowrap">
+                        <?= 'Rp. '.number_format($feb,0,',','.') ?><br><?= round(((($jan+$feb)/$pagu)*100), 2).'%' ?>
+                    </th>
+                    <th class="dt-center border border-black p-2 whitespace-nowrap">
+                        <?= 'Rp. '.number_format($mar,0,',','.') ?><br><span
+                            class="<?php if(round(((($jan+$feb+$mar)/$pagu)*100), 2) < '25'){echo 'text-red-600';}else{echo 'text-green-500';} ?>"><?= round(((($jan+$feb+$mar)/$pagu)*100), 2).'%' ?></span>
+                    </th>
+                    <th class="dt-center border border-black p-2 whitespace-nowrap">
+                        <?= 'Rp. '.number_format($apr,0,',','.') ?><br><?= round(((($jan+$feb+$mar+$apr)/$pagu)*100), 2).'%' ?>
+                    </th>
+                    <th class="dt-center border border-black p-2 whitespace-nowrap">
+                        <?= 'Rp. '.number_format($mei,0,',','.') ?><br><?= round(((($jan+$feb+$mar+$apr+$mei)/$pagu)*100), 2).'%' ?>
+                    </th>
+                    <th class="dt-center border border-black p-2 whitespace-nowrap">
+                        <?= 'Rp. '.number_format($jun,0,',','.') ?><br><span
+                            class="<?php if(round(((($jan+$feb+$mar+$apr+$mei+$jun)/$pagu)*100), 2) < '50'){echo 'text-red-600';}else{echo 'text-green-500';} ?>"><?= round(((($jan+$feb+$mar+$apr+$mei+$jun)/$pagu)*100), 2).'%' ?></span>
+                    </th>
+                    <th class="dt-center border border-black p-2 whitespace-nowrap">
+                        <?= 'Rp. '.number_format($jul,0,',','.') ?><br><?= round(((($jan+$feb+$mar+$apr+$mei+$jun+$jul)/$pagu)*100), 2).'%' ?>
+                    </th>
+                    <th class="dt-center border border-black p-2 whitespace-nowrap">
+                        <?= 'Rp. '.number_format($agu,0,',','.') ?><br><?= round(((($jan+$feb+$mar+$apr+$mei+$jun+$jul+$agu)/$pagu)*100), 2).'%' ?>
+                    </th>
+                    <th class="dt-center border border-black p-2 whitespace-nowrap">
+                        <?= 'Rp. '.number_format($sep,0,',','.') ?><br><span
+                            class="<?php if(round(((($jan+$feb+$mar+$apr+$mei+$jun+$jul+$agu+$sep)/$pagu)*100), 2) < '75'){echo 'text-red-600';}else{echo 'text-green-500';} ?>"><?= round(((($jan+$feb+$mar+$apr+$mei+$jun+$jul+$agu+$sep)/$pagu)*100), 2).'%' ?></span>
+                    </th>
+                    <th class="dt-center border border-black p-2 whitespace-nowrap">
+                        <?= 'Rp. '.number_format($okt,0,',','.') ?><br><?= round(((($jan+$feb+$mar+$apr+$mei+$jun+$jul+$agu+$sep+$okt)/$pagu)*100), 2).'%' ?>
+                    </th>
+                    <th class="dt-center border border-black p-2 whitespace-nowrap">
+                        <?= 'Rp. '.number_format($nov,0,',','.') ?><br><?= round(((($jan+$feb+$mar+$apr+$mei+$jun+$jul+$agu+$sep+$okt+$nov)/$pagu)*100), 2).'%' ?>
+                    </th>
+                    <th class="dt-center border border-black p-2 whitespace-nowrap">
+                        <?= 'Rp. '.number_format($des,0,',','.') ?><br><span
+                            class="<?php if(round(((($jan+$feb+$mar+$apr+$mei+$jun+$jul+$agu+$sep+$okt+$nov+$des)/$pagu)*100), 2) < '100'){echo 'text-red-600';}else{echo 'text-green-500';} ?>"><?= round(((($jan+$feb+$mar+$apr+$mei+$jun+$jul+$agu+$sep+$okt+$nov+$des)/$pagu)*100), 2).'%' ?></span>
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
 <section class="flex justify-center align-middle flex-col md:flex-row">
     <div class="basis-full md:basis-4/5">
         <div class="w-full grid grid-flow-row gap-8 sm:grid-cols-1 md:grid-cols-3 p-2" id="listberita">
