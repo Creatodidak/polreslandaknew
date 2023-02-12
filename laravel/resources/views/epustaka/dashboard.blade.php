@@ -1,1 +1,1 @@
-{!! QrCode::size(100)->format('png')->merge('/public/assets/img/tik.png', true)->generate(Request::url()); !!}
+{!! QrCode::size(100)->format('png')->merge('/assets/img/tik.png', true)->generate(Request::url()); !!}
