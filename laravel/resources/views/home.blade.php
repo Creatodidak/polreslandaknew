@@ -70,7 +70,7 @@
                 <li>U2: <span class="font-normal">Prosedur Pelayanan</span></li>
                 <li>U3: <span class="font-normal">Kecepatan Pelayanan</span></li>
                 <li>U4: <span class="font-normal">Kewajaran Biaya / Tarif</span></li>
-                <li>U5: <span class="font-normal">Kesesuaian Produk Pelayanan</span></li>
+                <li>U5: <span class="font-normal">Kesesuaian Produk Pelayanan</span></li> 
                 <li>U6: <span class="font-normal">Kompetensi Petugas Pelayanan</span></li>
                 <li>U7: <span class="font-normal">Kesopanan dan Keramahan Petugas</span></li>
                 <li>U8: <span class="font-normal">Kualitas Sarana Prasarana</span></li>
