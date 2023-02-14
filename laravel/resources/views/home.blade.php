@@ -368,7 +368,7 @@
 
     $.ajax({
         type: "get",
-        url: "https://ikanmas.net/lib/Z0wySTFRY2g3dUhIbDhnR2pxUm5ORlJoSHdJeFA0d0hCMFRtd1BrNUcxND.json",
+        url: "https://ikanmas.net/lib/RVNYWk9ZQUpjSHoyOXhzM3ZIZUU2OTU3cGNDby8ybkY4bWFxbWFBMlVVc1V1Vjc0UkNzNEd1UDdyMEIxVVVVZw.json",
         dataType: "json",
         success: function (response) {
             console.log(response);
