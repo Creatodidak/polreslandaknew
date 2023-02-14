@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Resource\ApiController;
+use App\Http\Resources\ApiController;
 use App\Models\Berita;
 
 class Beritax extends Controller
