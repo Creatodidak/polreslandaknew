@@ -50,105 +50,6 @@
         </div>
     </div>
 </section>
-{{-- <div class="flex bg-black justify-start h-12 overflow-scroll scroll- max-w-full">
-    <ul class="text-yellow-400 flex flex-row gap-x-2 p-2 my-auto uppercase font-bold">
-        <li>cccc</li>
-        <li>cccc</li>
-    </ul>
-</div> --}}
-{{-- <section class="flex justify-center align-middle flex-col w-full md:w-4/5 mx-auto p-6">
-    <div class="flex justify-center align-middle flex-row">
-        <div class="basis-full md:basis-3/5 bg-gradient-to-b from-gray-900 to-gray-500 p-4 rounded-t-lg">
-            <p class="text-2xl text-center text-white font-bold">JADWAL PELAYANAN POLRES LANDAK</p>
-        </div>
-    </div>
-    <div class="flex justify-center align-middle flex-col md:flex-row">
-        <div class="basis-1/5 bg-gradient-to-tr from-amber-300 to-orange-500 p-4 md:rounded-b-lg flex flex-col align-middle">
-            <p class="text-2xl text-center text-white font-bold">SPKT</p>
-            <p class="text-3xl font-bold text-white text-center my-auto">24 JAM</p>
-        </div>
-        <div class="basis-1/5 bg-gradient-to-tr from-cyan-400 to-sky-600 p-4 md:rounded-b-lg">
-            <p class="text-2xl text-center text-white font-bold">SATPAS</p>
-            <ul class="list-disc ml-2">
-                <li class="text-base text-white font-bold">SENIN - KAMIS
-                    <ul class="ml-2 font-semibold text-gray-100">
-                        <li>07.30 WIB - 15.00 WIB</li>
-                    </ul>
-                </li>
-                <li class="text-base text-white font-bold">JUM'AT
-                    <ul class="ml-2 font-semibold text-gray-100">
-                        <li>07.30 WIB - 15.30 WIB</li>
-                    </ul>
-                </li>
-                <li class="text-base text-white font-bold">SABTU - MINGGU
-                    <ul class="ml-2 font-semibold text-gray-100">
-                        <li>CLOSED</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="basis-1/5 bg-gradient-to-tr from-gray-500 to-gray-900 p-4 md:rounded-b-lg">
-            <p class="text-2xl text-center text-white font-bold">SKCK</p>
-            <ul class="list-disc ml-2">
-                <li class="text-base text-white font-bold">SENIN - KAMIS
-                    <ul class="ml-2 font-semibold text-gray-100">
-                        <li>07.30 WIB - 15.00 WIB</li>
-                    </ul>
-                </li>
-                <li class="text-base text-white font-bold">JUM'AT
-                    <ul class="ml-2 font-semibold text-gray-100">
-                        <li>07.30 WIB - 15.30 WIB</li>
-                    </ul>
-                </li>
-                <li class="text-base text-white font-bold">SABTU - MINGGU
-                    <ul class="ml-2 font-semibold text-gray-100">
-                        <li>CLOSED</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="basis-1/5 bg-gradient-to-tr from-orange-500 to-red-600 p-4 md:rounded-b-lg">
-            <p class="text-2xl text-center text-white font-bold">IDENTIFIKASI</p>
-            <ul class="list-disc ml-2">
-                <li class="text-base text-white font-bold">SENIN - KAMIS
-                    <ul class="ml-2 font-semibold text-gray-100">
-                        <li>07.30 WIB - 15.00 WIB</li>
-                    </ul>
-                </li>
-                <li class="text-base text-white font-bold">JUM'AT
-                    <ul class="ml-2 font-semibold text-gray-100">
-                        <li>07.30 WIB - 15.30 WIB</li>
-                    </ul>
-                </li>
-                <li class="text-base text-white font-bold">SABTU - MINGGU
-                    <ul class="ml-2 font-semibold text-gray-100">
-                        <li>CLOSED</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="basis-1/5 bg-gradient-to-tr from-lime-600 to-green-600 p-4 rounded-b-lg md:rounded-br-lg">
-            <p class="text-2xl text-center text-white font-bold">KLINIK</p>
-            <ul class="list-disc ml-2">
-                <li class="text-base text-white font-bold">SENIN - KAMIS
-                    <ul class="ml-2 font-semibold text-gray-100">
-                        <li>07.30 WIB - 15.00 WIB</li>
-                    </ul>
-                </li>
-                <li class="text-base text-white font-bold">JUM'AT
-                    <ul class="ml-2 font-semibold text-gray-100">
-                        <li>07.30 WIB - 15.30 WIB</li>
-                    </ul>
-                </li>
-                <li class="text-base text-white font-bold">SABTU - MINGGU
-                    <ul class="ml-2 font-semibold text-gray-100">
-                        <li>CLOSED</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section> --}}
 <div class="p-5 border border-b-0 border-gray-700 bg-gray-900 flex flex-col  justify-center">
     <span class="text-gray-100 text-2xl font-bold text-center mx-auto">DATA REALISASI ANGGARAN POLRES LANDAK TAHUN 2023</span>
     <div class="relative overflow-x-auto max-h-half shadow-md cursor-all-scroll text-white">
@@ -325,13 +226,15 @@
             </div>
         </div>
         <div class="" id="iklan1">
-            <img src="{{ asset('assets/img/ads1.png') }}" class="w-full" alt="">
+            {{-- <img src="{{ asset('assets/img/ads1.png') }}" class="w-full" alt=""> --}}
+            <img src="{{ URL::to('/') }}<?= $c->ads1?>" alt="" class="w-full">
         </div>
     </div>
 </section>
 <section class="flex justify-center gap-2 align-middle flex-col">
     <div class="flex justify-center align-middle p-2">
-        <img src="{{ asset('assets/img/ads2.png') }}" alt="">
+            <img src="{{ URL::to('/') }}<?= $c->ads2?>" alt="" class="w-full">
+            {{-- <img src="{{ asset('assets/img/ads2.png') }}" alt=""> --}}
     </div>
 </section>
 <div class="elfsight-app-bef49b21-6067-4375-8308-8c5b503b4643 mt-4 p-5"></div>
