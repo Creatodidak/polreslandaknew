@@ -51,6 +51,20 @@
     </div>
 </section>
 <div class="p-5 border border-b-0 border-gray-700 bg-gray-900 flex flex-col  justify-center">
+    <span class="text-gray-100 text-2xl font-bold text-center mx-auto">DATA SURVEY KEPUASAN MASYARAKAT DI WILAYAH HUKUM POLRES LANDAK</span>
+    <div class="flex flex-col md:flex-row gap-2">
+        <div class="basis-full md:basis-3/5 flex flex-col items-center justify-center border-4 border-gray-500 rounded-lg p-5">
+            <span class="text-2xl text-gray-100">NILAI MUTU PELAYANAN</span>
+            <span class="text-center font-bold text-green-500 text-8xl">99.99</span>
+            <span class="text-2xl text-green-500">A (SANGAT BAIK)</span>
+        </div>
+        <div class="basis-full md:basis-2/5 flex flex-col items-center justify-center border-4 border-gray-500 rounded-lg p-5">
+            <canvas class="p-1 md:p-5 text-white" id="chartBar"></canvas>
+        </div>
+    </div>
+</div>
+
+<div class="p-5 border border-b-0 border-gray-700 bg-gray-900 flex flex-col  justify-center">
     <span class="text-gray-100 text-2xl font-bold text-center mx-auto">DATA REALISASI ANGGARAN POLRES LANDAK TAHUN 2023</span>
     <div class="relative overflow-x-auto max-h-half shadow-md cursor-all-scroll text-white">
         <table id="example" class="display w-full text-xs font-bold text-gray-900 rounded-lg bg-gray-400 m-1 md:m-5">
@@ -243,7 +257,7 @@
 @section('script')
 
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     var cont = 0;
     var news = 9;
@@ -330,6 +344,84 @@
             }
         });
     });
+
+
+    $.ajax({
+        type: "post",
+        url: "https://ikanmas.net/lib/core.php",
+        data: {statreq: "upstats", newdata: "Z0wySTFRY2g3dUhIbDhnR2pxUm5ORlJoSHdJeFA0d0hCMFRtd1BrNUcxND"},
+        dataType: "json",
+        success: function (response) {
+            console.log(response.data.survei.indeks.angka);
+        }
+    });
+
+    const DATA_COUNT = 9;
+    const NUMBER_CFG = {count: DATA_COUNT, min: -100, max: 100};
+    let delayed;
+    const labels = ['U1', 'U2', 'U3', 'U4', 'U5', 'U6', 'U7', 'U8', 'U9']
+    const data = {
+    labels: labels,
+    datasets: [
+                {
+                label: 'SANGAT BAIK',
+                data: ['11', '13', '11', '44', '21', '212', '1', '1', '1', ],
+                borderColor: "#00d305",
+                backgroundColor: "#00d305",
+                },
+                {
+                label: 'BAIK',
+                data: ['11', '13', '11', '44', '21', '212', '1', '1', '1', ],
+                borderColor: "#00b4ff",
+                backgroundColor: "#00b4ff",
+                },
+                {
+                label: 'KURANG',
+                data: ['11', '13', '11', '44', '21', '212', '1', '1', '1', ],
+                borderColor: "#ffc000",
+                backgroundColor: "#ffc000",
+                },
+                {
+                label: 'TIDAK BAIK',
+                data: ['11', '13', '11', '44', '21', '212', '1', '1', '1', ],
+                borderColor: "#ff0000",
+                backgroundColor: "#ff0000",
+                }
+            ]
+    };
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'GRAFIK NILAI PER-UNSUR LAYANAN'
+                }
+            },
+            animation: {
+                onComplete: () => {
+                    delayed = true;
+                },
+                delay: (context) => {
+                    let delay = 0;
+                    if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                    delay = context.dataIndex * 300 + context.datasetIndex * 100;
+                    }
+                    return delay;
+                },
+            }
+        },
+    };
+
+    var chartBar = new Chart(
+        document.getElementById("chartBar"),
+        config
+    );
 </script>
 @endforeach
 @endsection
