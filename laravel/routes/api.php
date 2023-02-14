@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+$cnt = 'App\Http\Controllers\Api\\';
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('/berita', App\Http\Controllers\Api\Rberita::class);
+Route::apiResource('/berita', $cnt.Beritax::class);
