@@ -17,6 +17,7 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-/media/epustaka
+/media/epustaka/file
+/media/qrcodes
 /srv
 
