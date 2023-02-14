@@ -51,15 +51,31 @@
     </div>
 </section>
 <div class="p-5 border border-b-0 border-gray-700 bg-gray-900 flex flex-col  justify-center">
-    <span class="text-gray-100 text-2xl font-bold text-center mx-auto">DATA SURVEY KEPUASAN MASYARAKAT DI WILAYAH HUKUM POLRES LANDAK</span>
+    <span class="text-gray-100 text-2xl font-bold text-center mx-auto">DATA SURVEY KEPUASAN MASYARAKAT POLRES LANDAK</span>
+    <span class="text-gray-200 text-xl font-bold text-center mx-auto uppercase">PERIODE <span id="periode"></span></span>
+    <span class="text-gray-300 text-base italic text-center pb-5 mx-auto">Sumber: Https://ikanmas.net<br> Update: <span id="upd"></span> Pukul <?= date('H:i') ?> Wib</span>
     <div class="flex flex-col md:flex-row gap-2">
-        <div class="basis-full md:basis-3/5 flex flex-col items-center justify-center border-4 border-gray-500 rounded-lg p-5">
-            <span class="text-2xl text-gray-100">NILAI MUTU PELAYANAN</span>
-            <span class="text-center font-bold text-green-500 text-8xl">99.99</span>
-            <span class="text-2xl text-green-500">A (SANGAT BAIK)</span>
-        </div>
         <div class="basis-full md:basis-2/5 flex flex-col items-center justify-center border-4 border-gray-500 rounded-lg p-5">
+            <span class="text-2xl text-gray-100">NILAI MUTU PELAYANAN</span>
+            <span class="text-center font-bold text-8xl" id="nilaiangka"></span>
+            <span class="text-2xl" id="predikat"></span>
+        </div>
+        <div class="basis-full md:basis-4/5 flex flex-col items-center justify-center border-4 border-gray-500 rounded-lg p-5">
             <canvas class="p-1 md:p-5 text-white" id="chartBar"></canvas>
+        </div>
+        <div class="basis-full md:basis-2/5 flex flex-col items-left justify-center border-4 text-white text-lg font-bold border-gray-500 rounded-lg p-5">
+            Unsur (U): 
+            <ol class="list-disk">
+                <li>U1: <span class="font-normal">Persyaratan Pelayanan</span></li>
+                <li>U2: <span class="font-normal">Prosedur Pelayanan</span></li>
+                <li>U3: <span class="font-normal">Kecepatan Pelayanan</span></li>
+                <li>U4: <span class="font-normal">Kewajaran Biaya / Tarif</span></li>
+                <li>U5: <span class="font-normal">Kesesuaian Produk Pelayanan</span></li>
+                <li>U6: <span class="font-normal">Kompetensi Petugas Pelayanan</span></li>
+                <li>U7: <span class="font-normal">Kesopanan dan Keramahan Petugas</span></li>
+                <li>U8: <span class="font-normal">Kualitas Sarana Prasarana</span></li>
+                <li>U9: <span class="font-normal">Penanganan Pengaduan</span></li>
+            </ol>
         </div>
     </div>
 </div>
@@ -345,83 +361,134 @@
         });
     });
 
+    const sbaik = [];
+    const baik = [];
+    const kurang = [];
+    const tidakbaik = [];
 
     $.ajax({
-        type: "post",
-        url: "https://ikanmas.net/lib/core.php",
-        data: {statreq: "upstats", newdata: "Z0wySTFRY2g3dUhIbDhnR2pxUm5ORlJoSHdJeFA0d0hCMFRtd1BrNUcxND"},
+        type: "get",
+        url: "https://ikanmas.net/lib/RVNYWk9ZQUpjSHoyOXhzM3ZIZUU2OTU3cGNDby8ybkY4bWFxbWFBMlVVc1V1Vjc0UkNzNEd1UDdyMEIxVVVVZw.json",
         dataType: "json",
         success: function (response) {
-            console.log(response.data.survei.indeks.angka);
+            console.log(response);
+            var res = response.result.data.survei;
+            $('#periode').html(indo(response.result.data.survei.periode[0])+' - '+indo(response.result.data.survei.periode[1]));
+            $('#upd').html(indo(new Date()));
+            $('#nilaiangka').html(response.result.data.survei.indeks.angka);
+            $('#predikat').html(response.result.data.survei.indeks.huruf+' ('+response.result.data.survei.indeks.kategori+')');
+            if(response.result.data.survei.indeks.huruf == 'A'){
+                $('#nilaiangka').addClass('text-green-400');
+                $('#predikat').addClass('text-green-400');
+            }
+
+            if(response.result.data.survei.indeks.huruf == 'B'){
+                $('#nilaiangka').addClass('text-blue-500');
+                $('#predikat').addClass('text-blue-500');
+            }
+
+            if(response.result.data.survei.indeks.huruf == 'C'){
+                $('#nilaiangka').addClass('text-yellow-500');
+                $('#predikat').addClass('text-yellow-500');
+            }
+
+            if(response.result.data.survei.indeks.huruf == 'D'){
+                $('#nilaiangka').addClass('text-red-500');
+                $('#predikat').addClass('text-red-500');
+            }
+
+
+            sbaik.push(res.nilai[0][4],res.nilai[1][4],res.nilai[2][4],res.nilai[3][4],res.nilai[4][4],res.nilai[5][4],res.nilai[6][4],res.nilai[7][4],res.nilai[8][4]);
+            baik.push(res.nilai[0][3],res.nilai[1][3],res.nilai[2][3],res.nilai[3][3],res.nilai[4][3],res.nilai[5][3],res.nilai[6][3],res.nilai[7][3],res.nilai[8][3]);
+            kurang.push(res.nilai[0][2],res.nilai[1][2],res.nilai[2][2],res.nilai[3][2],res.nilai[4][2],res.nilai[5][2],res.nilai[6][2],res.nilai[7][2],res.nilai[8][2]);
+            tidakbaik.push(res.nilai[0][1],res.nilai[1][1],res.nilai[2][1],res.nilai[3][1],res.nilai[4][1],res.nilai[5][1],res.nilai[6][1],res.nilai[7][1],res.nilai[8][1]);
+
+            const DATA_COUNT = 9;
+            const NUMBER_CFG = {count: DATA_COUNT, min: -100, max: 100};
+            let delayed;
+            const labels = ['U1', 'U2', 'U3', 'U4', 'U5', 'U6', 'U7', 'U8', 'U9']
+            const data = {
+            labels: labels,
+            datasets: [
+                        {
+                        label: 'SANGAT BAIK',
+                        data: sbaik,
+                        borderColor: "#00d305",
+                        backgroundColor: "#00d305",
+                        },
+                        {
+                        label: 'BAIK',
+                        data: baik,
+                        borderColor: "#00b4ff",
+                        backgroundColor: "#00b4ff",
+                        },
+                        {
+                        label: 'KURANG',
+                        data: kurang,
+                        borderColor: "#ffc000",
+                        backgroundColor: "#ffc000",
+                        },
+                        {
+                        label: 'TIDAK BAIK',
+                        data: tidakbaik,
+                        borderColor: "#ff0000",
+                        backgroundColor: "#ff0000",
+                        }
+                    ]
+            };
+            const config = {
+                type: 'bar',
+                data: data,
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'GRAFIK NILAI PER-UNSUR LAYANAN'
+                        }
+                    },
+                    animation: {
+                        onComplete: () => {
+                            delayed = true;
+                        },
+                        delay: (context) => {
+                            let delay = 0;
+                            if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                            delay = context.dataIndex * 300 + context.datasetIndex * 100;
+                            }
+                            return delay;
+                        },
+                    }
+                },
+            };
+
+            var chartBar = new Chart(
+                document.getElementById("chartBar"),
+                config
+            );
         }
     });
 
-    const DATA_COUNT = 9;
-    const NUMBER_CFG = {count: DATA_COUNT, min: -100, max: 100};
-    let delayed;
-    const labels = ['U1', 'U2', 'U3', 'U4', 'U5', 'U6', 'U7', 'U8', 'U9']
-    const data = {
-    labels: labels,
-    datasets: [
-                {
-                label: 'SANGAT BAIK',
-                data: ['11', '13', '11', '44', '21', '212', '1', '1', '1', ],
-                borderColor: "#00d305",
-                backgroundColor: "#00d305",
-                },
-                {
-                label: 'BAIK',
-                data: ['11', '13', '11', '44', '21', '212', '1', '1', '1', ],
-                borderColor: "#00b4ff",
-                backgroundColor: "#00b4ff",
-                },
-                {
-                label: 'KURANG',
-                data: ['11', '13', '11', '44', '21', '212', '1', '1', '1', ],
-                borderColor: "#ffc000",
-                backgroundColor: "#ffc000",
-                },
-                {
-                label: 'TIDAK BAIK',
-                data: ['11', '13', '11', '44', '21', '212', '1', '1', '1', ],
-                borderColor: "#ff0000",
-                backgroundColor: "#ff0000",
-                }
-            ]
-    };
-    const config = {
-        type: 'bar',
-        data: data,
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    position: 'top',
-                },
-                title: {
-                    display: true,
-                    text: 'GRAFIK NILAI PER-UNSUR LAYANAN'
-                }
-            },
-            animation: {
-                onComplete: () => {
-                    delayed = true;
-                },
-                delay: (context) => {
-                    let delay = 0;
-                    if (context.type === 'data' && context.mode === 'default' && !delayed) {
-                    delay = context.dataIndex * 300 + context.datasetIndex * 100;
-                    }
-                    return delay;
-                },
-            }
-        },
-    };
+    function indo(tgl){
+        var hari = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+        var bulan = ['Januari', 'Februari', 'Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+        let tanggals = new Date(tgl);
+        var tanggal = tanggals.getDate();
+        var xhari = tanggals.getDay();
+        var xbulan = tanggals.getMonth();
+        var xtahun = tanggals.getYear();
 
-    var chartBar = new Chart(
-        document.getElementById("chartBar"),
-        config
-    );
+        var hari = hari[xhari];
+        var bulan = bulan[xbulan];
+        var tahun = (xtahun < 1000)?xtahun + 1900 : xtahun;
+
+        return tanggal +' '+ bulan +' '+ tahun;
+    }
+
+    
 </script>
 @endforeach
 @endsection
