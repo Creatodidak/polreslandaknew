@@ -17,11 +17,9 @@ class ApiController extends JsonResource
      * @param  mixed $resource
      * @return void
      */
-    public function __construct($status, $message, $resource)
+    public function __construct($resource)
     {
         parent::__construct($resource);
-        $this->status  = $status;
-        $this->message = $message;
     }
 
     /**
@@ -32,10 +30,6 @@ class ApiController extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-            'success'   => $this->status,
-            'msg'   => $this->message,
-            'data'      => $this->resource
-        ];
+        return $this->resource;
     }
 }

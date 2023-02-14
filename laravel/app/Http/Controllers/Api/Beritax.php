@@ -12,6 +12,6 @@ class Beritax extends Controller
     public function index(){
         $data = Berita::all();
 
-        return new ApiController(true, 'ok', $data);
+        return response()->json(['berita' => $data]);
     }
 }
