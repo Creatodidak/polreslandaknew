@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pimpinan;
 
-class pimpinanx extends Controller
+class Pimpinanx extends Controller
 {
     public function index(){
         $data = Pimpinan::all();
