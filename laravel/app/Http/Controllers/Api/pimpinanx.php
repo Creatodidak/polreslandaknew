@@ -20,14 +20,15 @@ class pimpinanx extends Controller
     }
 
     public function destroy($id){
-        $try = Pimpinan::where('id', $id)->delete();
-
-        if($try){
-            $res = 'ok';
-        }else{
-            $res = 'no';
+        try {
+            Pimpinan::findOrFail($id)->delete();
+            return response()->json(['message' => 'ok']);
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'No result'
+            ], Response::HTTP_FORBIDDEN);
         }
-        return response(["message" => $res]);
+
     }
 
 }
