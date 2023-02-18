@@ -16,7 +16,7 @@ class pimpinanx extends Controller
 
     public function show($id)
     {
-        return response(Pimpinan::where('id', $id)->get());
+        return response(Pimpinan::where('id', $id)->first());
     }
 
 }
