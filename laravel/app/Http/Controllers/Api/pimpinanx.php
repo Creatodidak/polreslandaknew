@@ -14,11 +14,9 @@ class pimpinanx extends Controller
         return response($data);
     }
 
-    public function show(Post $post)
+    public function show(Pimpinan $id)
     {
-        return response($post);
-
-
+        return response($id);
     }
 
 }
