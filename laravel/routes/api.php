@@ -21,4 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource('/berita', $cnt.Beritax::class);
 Route::apiResource('/pimpinan', $cnt.pimpinanx::class);
-Route::delete('/pimpinan/del/{id}', $cnt.'pimpinanx@destroys');
+Route::get('/pimpinan/del/{id}', $cnt.'pimpinanx@destroys');
