@@ -19,7 +19,7 @@ class pimpinanx extends Controller
         return response(Pimpinan::where('id', $id)->first());
     }
 
-    public function destroy($id){
+    public function destroys($id){
         try {
             Pimpinan::findOrFail($id)->delete();
             return response()->json(['message' => 'ok']);
