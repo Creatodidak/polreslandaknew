@@ -13,4 +13,10 @@ class Pimpinanx extends Controller
 
         return response($data);
     }
+
+    public function show(Post $post)
+    {
+        return response($post);
+    }
+
 }
