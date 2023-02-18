@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Pimpinan;
 
-class Pimpinanx extends Controller
+class pimpinanx extends Controller
 {
     public function index(){
         $data = Pimpinan::all();
@@ -17,6 +17,8 @@ class Pimpinanx extends Controller
     public function show(Post $post)
     {
         return response($post);
+
+
     }
 
 }

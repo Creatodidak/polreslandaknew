@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('/berita', $cnt.Beritax::class);
-Route::apiResource('/pimpinan', $cnt.Pimpinanx::class);
+Route::apiResource('/pimpinan', $cnt.pimpinanx::class);
