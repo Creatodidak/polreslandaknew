@@ -39,7 +39,7 @@ class pimpinanx extends Controller
             'jam_start' => 'required',
             'jam_end' => 'required',
             'rincian' => 'required',
-            'file1' => 'required',
+            'file' => 'required',
             'file2' => 'required',
             'file3' => 'required',
             'file4' => 'required',
@@ -49,7 +49,7 @@ class pimpinanx extends Controller
         if ($validator->fails()) {
             return response()->json(['msg' => $validator->errors()]);
         }else{
-            $img1 = $req->file('file1');
+            $img1 = $req->file('file');
             $img2 = $req->file('file2');
             $img3 = $req->file('file3');
             $img4 = $req->file('file4');
