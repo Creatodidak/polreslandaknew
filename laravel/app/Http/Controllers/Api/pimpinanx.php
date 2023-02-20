@@ -68,48 +68,59 @@ class pimpinanx extends Controller
             $do4 = $img4->move($destinationPath, $imgN4);
             $do5 = $img5->move($destinationPath, $imgN5);
 
+            if($do1){
+                if($do2){
+                    if($do3){
+                        if($do4){
+                            if($do5){
+                                $pju = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->pju))).'"]';
+                                $pers = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->pers))).'"]';
+                                $toga = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->toga))).'"]';
+                                $tomas = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->tomas))).'"]';
+                                $todat = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->todat))).'"]';
+                                $forkopim = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->forkopim))).'"]';
 
-            if($do1 && $do2 && $do3 && $do4 && $do5){
+                                $ins = Pimpinan::create([
+                                    'kegiatan' => $req->kegiatan,
+                                    'lokasi' => $req->lokasi,
+                                    'jam_start' => $req->jam_start,
+                                    'jam_end' => $req->jam_end,
+                                    'pju' => $pju,
+                                    'personil' => $pers,
+                                    'forkopimda' => $forkopim,
+                                    'tomas' => $tomas,
+                                    'toga' => $toga,
+                                    'todat' => $todat,
+                                    'rincian' => nl2br($req->rincian),
+                                    'nrp' => '98070129',
+                                    'input' => date('Y-m-d'),
+                                    'foto1' => '/media/vrs/pimpinan/'.$imgN1,
+                                    'foto2' => '/media/vrs/pimpinan/'.$imgN2,
+                                    'foto3' => '/media/vrs/pimpinan/'.$imgN3,
+                                    'foto4' => '/media/vrs/pimpinan/'.$imgN4,
+                                    'foto5' => '/media/vrs/pimpinan/'.$imgN5
+                                ]);
 
-                $pju = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->pju))).'"]';
-                $pers = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->pers))).'"]';
-                $toga = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->toga))).'"]';
-                $tomas = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->tomas))).'"]';
-                $todat = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->todat))).'"]';
-                $forkopim = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->forkopim))).'"]';
-
-                $ins = Pimpinan::create([
-                    'kegiatan' => $req->kegiatan,
-                    'lokasi' => $req->lokasi,
-                    'jam_start' => $req->jam_start,
-                    'jam_end' => $req->jam_end,
-                    'pju' => $pju,
-                    'personil' => $pers,
-                    'forkopimda' => $forkopim,
-                    'tomas' => $tomas,
-                    'toga' => $toga,
-                    'todat' => $todat,
-                    'rincian' => nl2br($req->rincian),
-                    'nrp' => '98070129',
-                    'input' => date('Y-m-d'),
-                    'foto1' => '/media/vrs/pimpinan/'.$imgN1,
-                    'foto2' => '/media/vrs/pimpinan/'.$imgN2,
-                    'foto3' => '/media/vrs/pimpinan/'.$imgN3,
-                    'foto4' => '/media/vrs/pimpinan/'.$imgN4,
-                    'foto5' => '/media/vrs/pimpinan/'.$imgN5
-                ]);
-
-                if($ins){
-                    // return redirect('/backend/inputberita')->with(['addok' => 'OK']);
-                    return response()->json(['msg' => 'ok']);
+                                if($ins){
+                                    return response()->json(['msg' => 'ok']);
+                                }else{
+                                    return response()->json(['msg' => 'Data Gagal Diinput!']);
+                                }
+                            }else{
+                                return response()->json(['msg' => 'Foto 5 Gagal Diupload!']);
+                            }
+                        }else{
+                            return response()->json(['msg' => 'Foto 4 Gagal Diupload!']);
+                        }
+                    }else{
+                        return response()->json(['msg' => 'Foto 3 Gagal Diupload!']);
+                    }
                 }else{
-                    // return redirect('/backend/inputberita')->with(['addno' => 'GAGAL INPUT BERITA DI DATABASE! HUBUNGI ADMIN!']);    
-                    return response()->json(['msg' => 'Data Gagal Diinput!']);
+                    return response()->json(['msg' => 'Foto 2 Gagal Diupload!']);
                 }
             }else{
-                return response()->json(['msg' => 'Foto Gagal Diupload!']);
+                return response()->json(['msg' => 'Foto 1 Gagal Diupload!']);
             }
         }
     }
-
 }
