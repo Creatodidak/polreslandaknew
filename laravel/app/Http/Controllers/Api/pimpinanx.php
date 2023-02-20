@@ -33,7 +33,7 @@ class pimpinanx extends Controller
     }
 
     public function store(Request $req){
-        $validator = Validator::make($request->all(), [
+        $validator = Validator::make($req->all(), [
             'kegiatan' => 'required',
             'lokasi' => 'required',
             'jam_start' => 'required',
@@ -49,11 +49,11 @@ class pimpinanx extends Controller
         if ($validator->fails()) {
             return response(["msg" => "no"]);
         }else{
-            $img1 = $request->file('file1');
-            $img2 = $request->file('file2');
-            $img3 = $request->file('file3');
-            $img4 = $request->file('file4');
-            $img5 = $request->file('file5');
+            $img1 = $req->file('file1');
+            $img2 = $req->file('file2');
+            $img3 = $req->file('file3');
+            $img4 = $req->file('file4');
+            $img5 = $req->file('file5');
             $imgN1 = time().'.'.$img1->extension();
             $imgN2 = time().'.'.$img2->extension();
             $imgN3 = time().'.'.$img3->extension();
