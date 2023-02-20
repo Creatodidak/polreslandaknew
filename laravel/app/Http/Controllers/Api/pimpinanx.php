@@ -47,7 +47,7 @@ class pimpinanx extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response(["msg" => "no"]);
+            return response()->json(['msg' => $validator->errors()]);
         }else{
             $img1 = $req->file('file1');
             $img2 = $req->file('file2');
