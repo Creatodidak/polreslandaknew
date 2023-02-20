@@ -82,7 +82,7 @@ class pimpinanx extends Controller
                     'kegiatan' => $req->kegiatan,
                     'lokasi' => $req->lokasi,
                     'jam_start' => $req->jam_start,
-                    'jam_end' => $req->$jam_end,
+                    'jam_end' => $req->jam_end,
                     'pju' => $pju,
                     'personil' => $pers,
                     'forkopimda' => $forkopim,
