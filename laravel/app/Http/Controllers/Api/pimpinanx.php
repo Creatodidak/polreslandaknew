@@ -54,7 +54,7 @@ class pimpinanx extends Controller
             $img3 = $req->file('file3');
             $img4 = $req->file('file4');
             $img5 = $req->file('file5');
-            $imgN1 = time().'.'.$img1->extension();
+            $imgN1 = time().'.jpeg';
             $imgN2 = time().'.'.$img2->extension();
             $imgN3 = time().'.'.$img3->extension();
             $imgN4 = time().'.'.$img4->extension();
