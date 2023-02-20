@@ -71,12 +71,12 @@ class pimpinanx extends Controller
 
             if($do1 && $do2 && $do3 && $do4 && $do5){
 
-                $pju =$req->pju;
-                $pers =$req->pers;
-                $toga =$req->toga;
-                $tomas =$req->tomas;
-                $todat =$req->todat;
-                $forkopim =$req->forkopim;
+                $pju = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->pju))).'"]';
+                $pers = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->pers))).'"]';
+                $toga = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->toga))).'"]';
+                $tomas = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->tomas))).'"]';
+                $todat = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->todat))).'"]';
+                $forkopim = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->forkopim))).'"]';
 
                 $ins = Pimpinan::create([
                     'kegiatan' => $req->kegiatan,
