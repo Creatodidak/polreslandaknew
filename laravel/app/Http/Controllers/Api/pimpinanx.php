@@ -54,7 +54,7 @@ class pimpinanx extends Controller
             $img3 = $req->file('file3');
             $img4 = $req->file('file4');
             $img5 = $req->file('file5');
-            $imgN1 = time().'.jpeg';
+            $imgN1 = time().'.'.$img1->extension();
             $imgN2 = time().'.'.$img2->extension();
             $imgN3 = time().'.'.$img3->extension();
             $imgN4 = time().'.'.$img4->extension();
@@ -71,12 +71,12 @@ class pimpinanx extends Controller
 
             if($do1 && $do2 && $do3 && $do4 && $do5){
 
-                $pju = explode(',', str_replace(' ,', ',', str_replace(', ', ',', $req->pju)));
-                $pers = explode(',', str_replace(' ,', ',', str_replace(', ', ',', $req->pers)));
-                $toga = explode(',', str_replace(' ,', ',', str_replace(', ', ',', $req->toga)));
-                $tomas = explode(',', str_replace(' ,', ',', str_replace(', ', ',', $req->tomas)));
-                $todat = explode(',', str_replace(' ,', ',', str_replace(', ', ',', $req->todat)));
-                $forkopim = explode(',', str_replace(' ,', ',', str_replace(', ', ',', $req->forkopim)));
+                $pju =$req->pju;
+                $pers =$req->pers;
+                $toga =$req->toga;
+                $tomas =$req->tomas;
+                $todat =$req->todat;
+                $forkopim =$req->forkopim;
 
                 $ins = Pimpinan::create([
                     'kegiatan' => $req->kegiatan,
