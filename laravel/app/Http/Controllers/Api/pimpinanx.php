@@ -11,9 +11,9 @@ class pimpinanx extends Controller
 {
     public function authorize()
     {
-        return true;
+        return false;
     }
-    
+
     public function index(){
         $data = Pimpinan::all();
 
