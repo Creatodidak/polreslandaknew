@@ -9,11 +9,6 @@ use Validator;
 
 class pimpinanx extends Controller
 {
-    public function authorize()
-    {
-        return false;
-    }
-
     public function index(){
         $data = Pimpinan::all();
 
