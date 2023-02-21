@@ -123,4 +123,47 @@ class pimpinanx extends Controller
             }
         }
     }
+
+    public function update($id, Request $req){
+        $validator = Validator::make($req->all(), [
+            'kegiatan' => 'required',
+            'lokasi' => 'required',
+            'jam_start' => 'required',
+            'jam_end' => 'required',
+            'rincian' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['msg' => $validator->errors()]);
+        }else{
+            $pju = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->pju))).'"]';
+            $pers = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->pers))).'"]';
+            $toga = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->toga))).'"]';
+            $tomas = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->tomas))).'"]';
+            $todat = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->todat))).'"]';
+            $forkopim = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->forkopim))).'"]';
+
+            $ins = Pimpinan::update([
+                'kegiatan' => $req->kegiatan,
+                'lokasi' => $req->lokasi,
+                'jam_start' => $req->jam_start,
+                'jam_end' => $req->jam_end,
+                'pju' => $pju,
+                'personil' => $pers,
+                'forkopimda' => $forkopim,
+                'tomas' => $tomas,
+                'toga' => $toga,
+                'todat' => $todat,
+                'rincian' => nl2br($req->rincian),
+                'nrp' => '98070129',
+                'input' => date('Y-m-d'),
+            ]);
+
+            if($ins){
+                return response()->json(['msg' => 'ok']);
+            }else{
+                return response()->json(['msg' => 'Data Gagal Diinput!']);
+            }
+        }
+    }
 }
