@@ -9,6 +9,11 @@ use Validator;
 
 class pimpinanx extends Controller
 {
+    public function authorize()
+    {
+        return true;
+    }
+    
     public function index(){
         $data = Pimpinan::all();
 
@@ -124,7 +129,8 @@ class pimpinanx extends Controller
         }
     }
 
-    public function update($id, Request $req){
+    public function update(Request $req){
+        
         $validator = Validator::make($req->all(), [
             'kegiatan' => 'required',
             'lokasi' => 'required',
