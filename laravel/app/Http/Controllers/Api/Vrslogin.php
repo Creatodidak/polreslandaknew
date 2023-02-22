@@ -49,7 +49,7 @@ class Vrslogin extends Controller
                         if($failupd){return response()->json(['msg' => 'NRP anda telah terblokir, hubungi admin!', 'kesempatan'=>'0 Kali'], 403);}
                     }else{
                         $failupd = Vrsusers::where('nrp', $req->nrp)->update(['failedlogin' => $fail+1]);
-                        if($failupd){return response()->json(['msg' => 'Data login salah!', 'kesempatan' => 3-$fail.' Kali'], 403);}
+                        if($failupd){return response()->json(['msg' => 'Data login salah!', 'kesempatan' => 2-$fail.' Kali'], 403);}
                     }
                 }else{
                     return response()->json(['msg' => 'NRP Tidak Terdaftar, Hubungi Admin!'], 403);
