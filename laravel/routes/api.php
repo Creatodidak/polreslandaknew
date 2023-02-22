@@ -27,3 +27,4 @@ Route::post('/pimpinan/upd/{id}', $cnt.'pimpinanx@update');
 Route::post('/pimpinan/upd/{id}', $cnt.'pimpinanx@update');
 Route::apiResource('/harkamtibmas', $cnt.Lapharkamtibmas::class);
 Route::get('/harkamtibmas/{kategori}/{nrp}', $cnt.'Lapharkamtibmas@kategori');
+Route::post('/vrslogin', $cnt.'Vrslogin@login');
