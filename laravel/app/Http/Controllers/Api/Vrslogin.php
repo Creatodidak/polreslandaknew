@@ -25,8 +25,8 @@ class Vrslogin extends Controller
                         $userdata = Personil::where('nrp', $req->nrp);
 
                         if($userdata->count() != 0){
-                            foreach($userdata->first() as $us){
-                                $updok = Vrsusers::where('nrp', $req->nrp)->update('otp', $otp);
+                            foreach($userdata->get() as $us){
+                                $updok = Vrsusers::where('nrp', $req->nrp)->update(['otp'=> $otp]);
                                 if($updok){return response()->json(['msg' => 'ok', 'satker'=> $us->satker, 'satfung'=> $us->satfung, 'nrp'=>$req->nrp, 'nama'=> $us->nama, 'pangkat'=> $us->pangkat], 200);}
                             }
                         }else{
@@ -40,7 +40,7 @@ class Vrslogin extends Controller
                 $upd = Vrsusers::where('nrp', $req->nrp);
 
                 if($upd->count() != 0){
-                    foreach($upd->first() as $u){
+                    foreach($upd->get() as $u){
                         $fail = $u->failedlogin;
                     }
     
@@ -48,7 +48,7 @@ class Vrslogin extends Controller
                         $failupd = Vrsusers::where('nrp', $req->nrp)->update(['failedlogin' => '3', 'status' => 'blocked']);
                         if($failupd){return response()->json(['msg' => 'NRP anda telah terblokir, hubungi admin!', 'kesempatan'=>'0 Kali'], 403);}
                     }else{
-                        $failupd = Vrsusers::where('nrp', $req->nrp)->update('failedlogin', $fail+1);
+                        $failupd = Vrsusers::where('nrp', $req->nrp)->update(['failedlogin' => $fail+1]);
                         if($failupd){return response()->json(['msg' => 'Data login salah!', 'kesempatan' => 3-$fail.' Kali'], 403);}
                     }
                 }else{
