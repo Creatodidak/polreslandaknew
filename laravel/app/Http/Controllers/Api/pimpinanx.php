@@ -15,6 +15,12 @@ class pimpinanx extends Controller
         return response($data);
     }
 
+    public function list($nrp){
+        $data = Pimpinan::where(['nrp' => $nrp]);
+
+        return response($data);
+    }
+
     public function show($id)
     {
         return response(Pimpinan::where('id', $id)->first());
