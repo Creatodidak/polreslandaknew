@@ -54,17 +54,22 @@ class Vrslogin extends Controller
             }
         }else{
             return response()->json(['msg' => 'NRP tidak boleh kosong!'], 403);
-        }
+        } 
     }
 
     public function validasi(Request $req){
         $user = Vrsusers::where(['nrp' => $req->nrp, 'otp' => $req->otp]);
 
         if($user->count() != 0){
-            $userdata = Personil::where('nrp', $req->nrp);
-            foreach($userdata->get() as $us){
-                return response()->json(['msg' => 'ok', 'satker'=> $us->satker, 'satfung'=> $us->satfung, 'nrp'=>$req->nrp, 'nama'=> $us->nama, 'pangkat'=> $us->pangkat], 200);
+            if($user->first()->status == 'active'){
+                $userdata = Personil::where('nrp', $req->nrp);
+                foreach($userdata->get() as $us){
+                    return response()->json(['msg' => 'ok', 'satker'=> $us->satker, 'satfung'=> $us->satfung, 'nrp'=>$req->nrp, 'nama'=> $us->nama, 'pangkat'=> $us->pangkat], 200);
+                }
+            }else{
+                return response()->json(['msg' => 'NRP anda telah terblokir, hubungi admin!', 'kesempatan'=>''], 403);
             }
+            
         }else{
             $upd = Vrsusers::where('nrp', $req->nrp);
 
