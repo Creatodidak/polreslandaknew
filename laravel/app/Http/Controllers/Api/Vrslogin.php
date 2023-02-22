@@ -18,7 +18,7 @@ class Vrslogin extends Controller
             if($user->count() != 0){
                 // $otp = rand(100000,999999);
                 $otp = '123456';
-                $cekstatus = Vrsusers::where('nrp', $req->nrp)->first();
+                $cekstatus = Vrsusers::where('nrp', $req->nrp)->get();
 
                 foreach($cekstatus as $c){
                     if($c->status == 'active'){
