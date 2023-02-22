@@ -9,8 +9,8 @@ use Validator;
 
 class pimpinanx extends Controller
 {
-    public function index(){
-        $data = Pimpinan::all();
+    public function index($nrp){
+        $data = Pimpinan::where(['nrp' => $nrp]);
 
         return response($data);
     }
@@ -39,6 +39,7 @@ class pimpinanx extends Controller
             'jam_start' => 'required',
             'jam_end' => 'required',
             'rincian' => 'required',
+            'nrp' => 'required',
             'file' => 'required',
             'file2' => 'required',
             'file3' => 'required',
@@ -92,7 +93,7 @@ class pimpinanx extends Controller
                                     'toga' => $toga,
                                     'todat' => $todat,
                                     'rincian' => nl2br($req->rincian),
-                                    'nrp' => '98070129',
+                                    'nrp' => $req->nrp,
                                     'input' => date('Y-m-d'),
                                     'foto1' => '/media/vrs/pimpinan/'.$imgN1,
                                     'foto2' => '/media/vrs/pimpinan/'.$imgN2,
@@ -156,7 +157,6 @@ class pimpinanx extends Controller
                 'toga' => $toga,
                 'todat' => $todat,
                 'rincian' => nl2br($req->rincian),
-                'nrp' => '98070129',
                 'input' => date('Y-m-d'),
             ]);
 

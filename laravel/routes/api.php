@@ -21,5 +21,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource('/berita', $cnt.Beritax::class);
 Route::apiResource('/pimpinan', $cnt.pimpinanx::class);
+Route::get('/pimpinan/{nrp}', $cnt.'pimpinanx@index');
 Route::get('/pimpinan/del/{id}', $cnt.'pimpinanx@destroys');
 Route::post('/pimpinan/upd/{id}', $cnt.'pimpinanx@update');
+Route::post('/pimpinan/upd/{id}', $cnt.'pimpinanx@update');
+Route::apiResource('/harkamtibmas', $cnt.Lapharkamtibmas::class);
+Route::get('/harkamtibmas/{kategori}/{nrp}', $cnt.'Lapharkamtibmas@kategori');
