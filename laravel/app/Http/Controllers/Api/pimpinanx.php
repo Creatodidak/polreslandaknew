@@ -124,7 +124,7 @@ class pimpinanx extends Controller
         }
     }
 
-    public function update(Request $req){
+    public function update($id, Request $req){
         
         $validator = Validator::make($req->all(), [
             'kegiatan' => 'required',
@@ -144,7 +144,7 @@ class pimpinanx extends Controller
             $todat = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->todat))).'"]';
             $forkopim = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->forkopim))).'"]';
 
-            $ins = Pimpinan::update([
+            $ins = Pimpinan::where('id', $id)->update([
                 'kegiatan' => $req->kegiatan,
                 'lokasi' => $req->lokasi,
                 'jam_start' => $req->jam_start,
