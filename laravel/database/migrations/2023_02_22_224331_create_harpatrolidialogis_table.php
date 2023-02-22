@@ -29,6 +29,11 @@ return new class extends Migration
             $table->longText('masukan');
             $table->longText('respon');
             $table->string('audiens');
+            $table->string('foto1');
+            $table->string('foto2');
+            $table->string('foto3');
+            $table->string('foto4');
+            $table->string('foto5');
             $table->timestamps();
         });
     }
