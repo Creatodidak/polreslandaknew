@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Vrsusers extends Model
 {
     use HasFactory;
-    private $fillable = ['id', 'nrp', 'password', 'email', 'otp', 'failedlogin', 'level', 'status'];
+    protected $fillable = ['id', 'nrp', 'password', 'email', 'otp', 'failedlogin', 'level', 'status'];
 }
 
 
