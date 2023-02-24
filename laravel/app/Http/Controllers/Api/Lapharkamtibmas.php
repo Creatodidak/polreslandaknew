@@ -117,8 +117,8 @@ class Lapharkamtibmas extends Controller
     }
 
     public function shows($kategori, $id){
-        if($kategori == 'patrolidialogis'){
+        // if($kategori == 'patrolidialogis'){
             return response()->json(Harpatrolidialogis::where('id', $id)->first(), 200);
-        }
+        // }
     }
 }
