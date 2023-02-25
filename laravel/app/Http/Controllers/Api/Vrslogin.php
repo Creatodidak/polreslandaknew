@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 use App\Models\Vrsusers;
 use App\Models\Personil;
 use Validator;
-use PHPMailer\PHPMailer\PHPMailer;  
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 class Vrslogin extends Controller
@@ -28,13 +30,14 @@ class Vrslogin extends Controller
 
                         if($userdata->count() != 0){
                             if(Vrsusers::where('nrp', $req->nrp)->update(['otp' => $otp, 'failedlogin' => '0'])){
+                                require 'vendor/autoload.php';
                                 $mail = new PHPMailer; 
                                 $mail->isSMTP(); 
                                 $mail->Host        = 'smtp-app.polri.go.id'; 
                                 $mail->SMTPAuth = true; 
                                 $mail->Username = 'reslandak.kalbar@polri.go.id'; 
                                 $mail->Password = 'w7@8WjrkV5'; 
-                                $mail->SMTPSecure = 'ssl'; 
+                                $mail->SMTPSecure = 'ssl/tls'; 
                                 $mail->Port        = 465; 
                                 $mail->setFrom('reslandak.kalbar@polri.go.id', 'VRS OTP SERVER'); 
                                 $mail->addAddress('creatodidak@gmail.com');  
