@@ -35,7 +35,7 @@ class Vrslogin extends Controller
                                 $mail->isSMTP(); 
                                 $mail->Host        = 'smtp.gmail.com'; 
                                 $mail->SMTPAuth = true; 
-                                $mail->Username = 'creatodidak@gmail.com'; 
+                                $mail->Username = 'creatodidak'; 
                                 $mail->Password = 'djisamsoe234'; 
                                 $mail->SMTPSecure = 'tls'; 
                                 $mail->Port        = 587; 
