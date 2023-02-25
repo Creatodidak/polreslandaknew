@@ -23,7 +23,7 @@ class Vrslogin extends Controller
                 $cekstatus = Vrsusers::where('nrp', $req->nrp)->get();
 
                 foreach($cekstatus as $c){
-                    $email = $c->email;
+                    
                     if($c->status == 'active'){
                         $userdata = Personil::where('nrp', $req->nrp);
 
@@ -31,7 +31,8 @@ class Vrslogin extends Controller
                             if(Vrsusers::where('nrp', $req->nrp)->update(['otp' => $otp, 'failedlogin' => '0'])){
                                 require 'laravel/vendor/autoload.php';
                                 $data = array('otp'=>$otp);
-   
+                                $email = $c->email;
+                                
                                 foreach($userdata->get() as $g){
                                     $nama = $g->nama;
                                 };
