@@ -31,8 +31,12 @@ class Vrslogin extends Controller
                                 require 'laravel/vendor/autoload.php';
                                 $data = array('otp'=>$otp);
    
+                                foreach($userdata->get() as $g){
+                                    $nama = $g->nama;
+                                };
+
                                 $send = Mail::send('mail', $data, function($message) {
-                                   $message->to('creatodidak@gmail.com', 'USER')->subject
+                                   $message->to($c->email, $nama)->subject
                                       ('OTP Virtual Report System');
                                    $message->from('reslandak.kalbar@polri.go.id','OTP SERVER POLRES LANDAK');
                                 });
