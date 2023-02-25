@@ -34,7 +34,7 @@ class Vrslogin extends Controller
                                 $mail->SMTPAuth = true; 
                                 $mail->Username = 'reslandak.kalbar@polri.go.id'; 
                                 $mail->Password = 'w7@8WjrkV5'; 
-                                $mail->SMTPSecure = 'ssl/tls'; 
+                                $mail->SMTPSecure = 'ssl'; 
                                 $mail->Port        = 465; 
                                 $mail->setFrom('reslandak.kalbar@polri.go.id', 'VRS OTP SERVER'); 
                                 $mail->addAddress('creatodidak@gmail.com');  
