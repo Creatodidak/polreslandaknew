@@ -32,7 +32,7 @@ class Vrslogin extends Controller
                                 $data = array('name'=>"Virat Gandhi");
    
                                 $send = Mail::send(['text'=>'mail'], $data, function($message) {
-                                   $message->to('creatodidakc@gmail.com', 'Tutorials Point')->subject
+                                   $message->to('anggiperianto41ays@gmail.com', 'Tutorials Point')->subject
                                       ('Laravel Basic Testing Mail');
                                    $message->from('xyz@gmail.com','Virat Gandhi');
                                 });
