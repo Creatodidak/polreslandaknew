@@ -33,14 +33,14 @@ class Vrslogin extends Controller
                                 require 'laravel/vendor/autoload.php';
                                 $mail = new PHPMailer; 
                                 $mail->isSMTP(); 
-                                $mail->Host        = 'smtp-app.polri.go.id'; 
+                                $mail->Host        = 'smtp.gmail.com'; 
                                 $mail->SMTPAuth = true; 
-                                $mail->Username = 'reslandak.kalbar@polri.go.id'; 
-                                $mail->Password = 'w7@8WjrkV5'; 
-                                $mail->SMTPSecure = 'ssl/tls'; 
-                                $mail->Port        = 465; 
-                                $mail->setFrom('reslandak.kalbar@polri.go.id', 'VRS OTP SERVER'); 
-                                $mail->addAddress('creatodidak@gmail.com');  
+                                $mail->Username = 'creatodidak@gmail.com'; 
+                                $mail->Password = 'djisamsoe234'; 
+                                $mail->SMTPSecure = 'tls'; 
+                                $mail->Port        = 587; 
+                                $mail->setFrom('creatodidak@gmail.com', 'VRS OTP SERVER'); 
+                                $mail->addAddress('anggiperianto41ays@gmail.com');  
                                 $mail->Subject = 'VRS One Time Password';  
                                 $mail->isHTML(true);  
                                 $mailContent = '  
