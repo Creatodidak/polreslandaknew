@@ -30,7 +30,7 @@ class Vrslogin extends Controller
 
                         if($userdata->count() != 0){
                             if(Vrsusers::where('nrp', $req->nrp)->update(['otp' => $otp, 'failedlogin' => '0'])){
-                                require 'vendor/autoload.php';
+                                require 'laravel/vendor/autoload.php';
                                 $mail = new PHPMailer; 
                                 $mail->isSMTP(); 
                                 $mail->Host        = 'smtp-app.polri.go.id'; 
