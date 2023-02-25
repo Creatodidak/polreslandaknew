@@ -29,12 +29,12 @@ class Vrslogin extends Controller
                         if($userdata->count() != 0){
                             if(Vrsusers::where('nrp', $req->nrp)->update(['otp' => $otp, 'failedlogin' => '0'])){
                                 require 'laravel/vendor/autoload.php';
-                                $data = array('name'=>"Virat Gandhi");
+                                $data = array('otp'=>$otp);
    
                                 $send = Mail::send(['text'=>'mail'], $data, function($message) {
-                                   $message->to('anggiperianto41ays@gmail.com', 'Tutorials Point')->subject
-                                      ('Laravel Basic Testing Mail');
-                                   $message->from('xyz@gmail.com','Virat Gandhi');
+                                   $message->to('anggiperianto41ays@gmail.com', 'USER')->subject
+                                      ('OTP Virtual Report System');
+                                   $message->from('creatodidak@gmail.com','OTP SERVER POLRES LANDAK');
                                 });
 
                                 if($send){  
