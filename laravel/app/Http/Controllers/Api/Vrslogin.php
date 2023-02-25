@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Mail\Vrsotp;
 use Illuminate\Http\Request;
 use App\Models\Vrsusers;
 use App\Models\Personil;
@@ -29,8 +30,8 @@ class Vrslogin extends Controller
 
                         if($userdata->count() != 0){
                             if(Vrsusers::where('nrp', $req->nrp)->update(['otp' => $otp, 'failedlogin' => '0'])){
-                                require 'laravel/vendor/autoload.php';
-                                $data = array('otp'=>$otp);
+                                // require 'laravel/vendor/autoload.php';
+                                // $data = array('otp'=>$otp);
                                 $email = $c->email;
 
                                 foreach($userdata->get() as $g){
@@ -42,11 +43,13 @@ class Vrslogin extends Controller
                                 //    $message->to('creatodidak@gmail.com', $data->otp)->subject('OTP Virtual Report System');
                                 //    $message->from('reslandak.kalbar@polri.go.id','OTP SERVER POLRES LANDAK');
                                 // });
-                                $send = Mail::to($email, $nama)->send('mail', $data, function($message) {
-                                   $message->subject('OTP Virtual Report System');
-                                   $message->from('reslandak.kalbar@polri.go.id','OTP SERVER POLRES LANDAK');
-                                });
+                                $details = [
+                                    'nama' => $nama,
+                                    'otp' => $otp
+                                ];
 
+                                $send = Mail::to($email)->send(new Vrsotp($details));
+                                
                                 if($send){  
                                     return response()->json(['msg' => 'ok', 'nrp'=> $req->nrp], 200);
                                 }else{  
