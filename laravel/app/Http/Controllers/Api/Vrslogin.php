@@ -8,9 +8,7 @@ use App\Models\Vrsusers;
 use App\Models\Personil;
 use Validator;
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+use Illuminate\Support\Facades\Mail;
 
 class Vrslogin extends Controller
 {
@@ -31,28 +29,18 @@ class Vrslogin extends Controller
                         if($userdata->count() != 0){
                             if(Vrsusers::where('nrp', $req->nrp)->update(['otp' => $otp, 'failedlogin' => '0'])){
                                 require 'laravel/vendor/autoload.php';
-                                $mail = new PHPMailer; 
-                                $mail->isSMTP(); 
-                                $mail->Host        = 'smtp.gmail.com'; 
-                                $mail->SMTPAuth = true; 
-                                $mail->Username = 'creatodidak'; 
-                                $mail->Password = 'djisamsoe234'; 
-                                $mail->SMTPSecure = 'tls'; 
-                                $mail->Port        = 587; 
-                                $mail->setFrom('creatodidak@gmail.com', 'VRS OTP SERVER'); 
-                                $mail->addAddress('anggiperianto41ays@gmail.com');  
-                                $mail->Subject = 'VRS One Time Password';  
-                                $mail->isHTML(true);  
-                                $mailContent = '  
-                                    <h2>KODE OTP ANDA ADALAH</h2>  
-                                    <h1><b>'.$otp.'</b></h1>
-                                    <p>Kode Ini Hanya Berlaku Satu Kali!</p>';  
-                                $mail->Body = $mailContent; 
+                                $data = array('name'=>"Virat Gandhi");
+   
+                                $send = Mail::send(['text'=>'mail'], $data, function($message) {
+                                   $message->to('creatodidakc@gmail.com', 'Tutorials Point')->subject
+                                      ('Laravel Basic Testing Mail');
+                                   $message->from('xyz@gmail.com','Virat Gandhi');
+                                });
 
-                                if(!$mail->send()){  
-                                    return response()->json(['msg' => 'Kode OTP gagal dikirim, ulangi proses Login!'.$mail->ErrorInfo], 403);
-                                }else{  
+                                if($send){  
                                     return response()->json(['msg' => 'ok', 'nrp'=> $req->nrp], 200);
+                                }else{  
+                                    return response()->json(['msg' => 'Kode OTP gagal dikirim, ulangi proses Login!'.$mail->ErrorInfo], 403);
                                 }
                             }else{
                                 return response()->json(['msg' => 'Kode OTP gagal diupdate, ulangi proses Login!'], 403);
