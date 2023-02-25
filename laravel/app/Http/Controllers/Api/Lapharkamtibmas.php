@@ -121,4 +121,10 @@ class Lapharkamtibmas extends Controller
             return response()->json(Harpatrolidialogis::where('id', $id)->first(), 200);
         }
     }
+
+    public function deletes($kategori, $id){
+        if($kategori == 'patrolidialogis'){
+            return response()->json(Harpatrolidialogis::where('id', $id)->delete(), 200);
+        }
+    }
 }

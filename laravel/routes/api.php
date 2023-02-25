@@ -29,6 +29,7 @@ Route::apiResource('/harkamtibmas', $cnt.Lapharkamtibmas::class);
 Route::get('/harkamtibmas/{kategori}/{nrp}', $cnt.'Lapharkamtibmas@kategori');
 Route::post('/harkamtibmas/{kategori}', $cnt.'Lapharkamtibmas@store');
 Route::get('/harkamtibmas/{kategori}/show/{id}', $cnt.'Lapharkamtibmas@shows');
+Route::get('/harkamtibmas/{kategori}/del/{id}', $cnt.'Lapharkamtibmas@deletes');
 Route::post('/vrslogin', $cnt.'Vrslogin@login');
 Route::post('/vrslogin/validasi', $cnt.'Vrslogin@validasi');
  
