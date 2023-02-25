@@ -45,9 +45,9 @@ class Vrslogin extends Controller
                                     <h1><b>'.$otp.'</b></h1>
                                     <p>Kode Ini Hanya Berlaku Satu Kali!</p>';  
                                 $mail->Body = $mailContent; 
-                                
+
                                 if(!$mail->send()){  
-                                    return response()->json(['msg' => 'Kode OTP gagal dikirim, ulangi proses Login!'], 403);
+                                    return response()->json(['msg' => 'Kode OTP gagal dikirim, ulangi proses Login!'.$mail->ErrorInfo], 403);
                                 }else{  
                                     return response()->json(['msg' => 'ok', 'nrp'=> $req->nrp], 200);
                                 }
