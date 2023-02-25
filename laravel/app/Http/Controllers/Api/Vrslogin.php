@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Vrsusers;
 use App\Models\Personil;
 use Validator;
+use PHPMailer\PHPMailer\PHPMailer;  
+use PHPMailer\PHPMailer\Exception;
 
 class Vrslogin extends Controller
 {
@@ -16,8 +18,8 @@ class Vrslogin extends Controller
             $user = Vrsusers::where(['nrp' => $req->nrp, 'password' => md5($req->password)]);
 
             if($user->count() != 0){
-                // $otp = rand(100000,999999);
-                $otp = '123456';
+                $otp = rand(100000,999999);
+                // $otp = '123456';
                 $cekstatus = Vrsusers::where('nrp', $req->nrp)->get();
 
                 foreach($cekstatus as $c){
@@ -25,7 +27,34 @@ class Vrslogin extends Controller
                         $userdata = Personil::where('nrp', $req->nrp);
 
                         if($userdata->count() != 0){
-                            return response()->json(['msg' => 'ok', 'nrp'=> $req->nrp], 200);
+                            if(Vrsusers::where('nrp', $req->nrp)->update(['otp' => $otp, 'failedlogin' => '0'])){
+                                $mail = new PHPMailer; 
+                                $mail->isSMTP(); 
+                                $mail->Host        = 'smtp-app.polri.go.id'; 
+                                $mail->SMTPAuth = true; 
+                                $mail->Username = 'reslandak.kalbar@polri.go.id'; 
+                                $mail->Password = 'w7@8WjrkV5'; 
+                                $mail->SMTPSecure = 'ssl/tls'; 
+                                $mail->Port        = 465; 
+                                $mail->setFrom('reslandak.kalbar@polri.go.id', 'VRS OTP SERVER'); 
+                                $mail->addAddress('creatodidak@gmail.com');  
+                                $mail->Subject = 'VRS One Time Password';  
+                                $mail->isHTML(true);  
+                                $mailContent = '  
+                                    <h2>KODE OTP ANDA ADALAH</h2>  
+                                    <h1><b>'.$otp.'</b></h1>
+                                    <p>Kode Ini Hanya Berlaku Satu Kali!</p>';  
+                                $mail->Body = $mailContent; 
+                                
+                                if(!$mail->send()){  
+                                    return response()->json(['msg' => 'Kode OTP gagal dikirim, ulangi proses Login!'], 403);
+                                }else{  
+                                    return response()->json(['msg' => 'ok', 'nrp'=> $req->nrp], 200);
+                                }
+                            }else{
+                                return response()->json(['msg' => 'Kode OTP gagal diupdate, ulangi proses Login!'], 403);
+                            }
+                            
                         }else{
                             return response()->json(['msg' => 'NRP anda tidak terdaftar sebagai Personil Polres Landak!'], 403);
                         }
