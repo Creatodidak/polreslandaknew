@@ -23,6 +23,7 @@ class Vrslogin extends Controller
                 $cekstatus = Vrsusers::where('nrp', $req->nrp)->get();
 
                 foreach($cekstatus as $c){
+                    $email = $c->email;
                     if($c->status == 'active'){
                         $userdata = Personil::where('nrp', $req->nrp);
 
@@ -36,7 +37,7 @@ class Vrslogin extends Controller
                                 };
 
                                 $send = Mail::send('mail', $data, function($message) {
-                                   $message->to($c->email, $nama)->subject
+                                   $message->to($email, $nama)->subject
                                       ('OTP Virtual Report System');
                                    $message->from('reslandak.kalbar@polri.go.id','OTP SERVER POLRES LANDAK');
                                 });
