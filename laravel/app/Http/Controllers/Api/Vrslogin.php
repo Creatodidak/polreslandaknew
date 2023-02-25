@@ -48,7 +48,7 @@ class Vrslogin extends Controller
                                     'otp' => $otp
                                 ];
 
-                                $send = Mail::to($email)->send(new Vrsotp($details));
+                                $send = Mail::to($email, $nama)->send(new Vrsotp($details));
                                 
                                 if($send){  
                                     return response()->json(['msg' => 'ok', 'nrp'=> $req->nrp], 200);
