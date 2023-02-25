@@ -37,9 +37,9 @@ class Vrslogin extends Controller
                                     $nama = $g->nama;
                                 };
 
-                                $send = Mail::send('mail', $data, $email, $nama, function($message) {
+                                $send = Mail::send('mail', $data, function($message) {
                                    
-                                   $message->to($email, $nama)->subject('OTP Virtual Report System');
+                                   $message->to('creatodidak@gmail.com', $data->otp)->subject('OTP Virtual Report System');
                                    $message->from('reslandak.kalbar@polri.go.id','OTP SERVER POLRES LANDAK');
                                 });
 
