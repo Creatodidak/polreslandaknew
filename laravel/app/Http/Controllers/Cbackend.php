@@ -151,7 +151,7 @@ class Cbackend extends Controller
                         'publisher' => $request->session()->get('nrp'),
                         'satker' =>  $request->session()->get('satker'),
                         'view' => '0',
-                        'create_at' => date('Y-m-d H:i:s')
+                        'create_at' => date('Y-m-d')
                     ]);
 
                     if($ins){
