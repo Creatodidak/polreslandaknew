@@ -10,7 +10,7 @@ use App\Models\Berita;
 class Beritax extends Controller
 {
     public function list($nrp){
-        $data = Berita::whereDate(['create_at' => date('Y-m-d')])->get();
+        $data = Berita::where(['create_at' => date('Y-m-d')])->get();
         // 'nrp' => $nrp, 
         return response($data, 200);
     }
