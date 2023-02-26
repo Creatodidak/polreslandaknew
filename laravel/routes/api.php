@@ -31,6 +31,6 @@ Route::get('/harkamtibmas/{kategori}/show/{id}', $cnt.'Lapharkamtibmas@shows');
 Route::get('/harkamtibmas/{kategori}/del/{id}', $cnt.'Lapharkamtibmas@deletes');
 Route::post('/vrslogin', $cnt.'Vrslogin@login');
 Route::post('/vrslogin/validasi', $cnt.'Vrslogin@validasi');
-Route::get('/berita/{nrp}', $cnt.'Beritax@list');
+Route::get('/berita/list/{nrp}', $cnt.'Beritax@list');
 
  
