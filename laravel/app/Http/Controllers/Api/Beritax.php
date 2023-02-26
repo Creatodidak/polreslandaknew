@@ -9,9 +9,9 @@ use App\Models\Berita;
 
 class Beritax extends Controller
 {
-    public function index(){
-        $data = Berita::all();
-
-        return response($data);
+    public function list($nrp){
+        $data = Berita::where(['date(create_at)' => date('Y-m-d')])->get();
+        // 'nrp' => $nrp, 
+        return response($data, 200);
     }
 }

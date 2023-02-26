@@ -19,7 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('/berita', $cnt.Beritax::class);
 Route::apiResource('/pimpinan', $cnt.pimpinanx::class);
 Route::get('/pimpinan/get/{nrp}', $cnt.'pimpinanx@list');
 Route::get('/pimpinan/del/{id}', $cnt.'pimpinanx@destroys');
@@ -32,4 +31,6 @@ Route::get('/harkamtibmas/{kategori}/show/{id}', $cnt.'Lapharkamtibmas@shows');
 Route::get('/harkamtibmas/{kategori}/del/{id}', $cnt.'Lapharkamtibmas@deletes');
 Route::post('/vrslogin', $cnt.'Vrslogin@login');
 Route::post('/vrslogin/validasi', $cnt.'Vrslogin@validasi');
+Route::get('/berita/{nrp}', $cnt.'Beritax@list');
+
  
