@@ -21,11 +21,11 @@ class Beritax extends Controller
 
     public function addberita(Request $request){
         $validator = Validator::make($request->all(), [
-            'judul' => 'required|min:8',
-            'penulis' => 'required|min:3',
-            'isi' => 'required|min:8',
-            'kategori' => 'required|min:8',
-            'caption' => 'required|min:8',
+            'judul' => 'required',
+            'penulis' => 'required',
+            'isi' => 'required',
+            'kategori' => 'required',
+            'caption' => 'required',
             'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
