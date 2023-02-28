@@ -47,7 +47,7 @@ class Beritax extends Controller
 
                 if($do){
                     $ins = Berita::create([
-                        'judul' => str_replace('*', '', strtoupper($request->judul)),
+                        'judul' => str_replace(array( '\'', '"', ',' , '.' , ';', '<', '>' ), '', strtoupper($request->judul)),
                         'link' =>  str_replace(' ', '-',strtolower(str_replace( array( '\'', '"', ',' , '.' , ';', '<', '>' ), '', $request->judul))),
                         'penulis' => $request->penulis,
                         'isi' => nl2br($request->isi),
