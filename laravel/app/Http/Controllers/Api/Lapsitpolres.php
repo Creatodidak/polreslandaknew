@@ -67,6 +67,12 @@ class Lapsitpolres extends Controller
     }
 
     public function del($id){
-        
+        $data = Lapsit::where('id', $id)->delete();
+
+        if($data){
+            return response()->json(['msg'=>'ok'], 200);
+        }else{
+            return response()->json(['msg'=>'Data Gagal Dihapus!'], 200);
+        }
     }
 }
