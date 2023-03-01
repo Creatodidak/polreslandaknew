@@ -97,6 +97,8 @@ class Beritax extends Controller
                                           'input' => date('Y-m-d')
                                         ]);
             }
+
+            return response()->json(['msg' => 'ok'], 200);
         }
     }
 
