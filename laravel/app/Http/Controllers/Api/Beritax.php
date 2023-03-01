@@ -91,16 +91,11 @@ class Beritax extends Controller
             $data = explode(PHP_EOL, $req->data);
 
             foreach($data as $d){
-                $ins = Eksternal::create(['link' => $d,
+                Eksternal::create(['link' => $d,
                                           'nrp'=> $req->nrp,
                                           'satker' => $req->satker,
                                           'input' => date('Y-m-d')
                                         ]);
-                if($ins){
-                    return response()->json(['msg' => 'ok'], 200);
-                }else{
-                    return response()->json(['msg' => 'Laporan Gagal Di Input!'], 200);
-                }
             }
         }
     }
