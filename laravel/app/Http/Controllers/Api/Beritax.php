@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Resources\ApiController;
 use App\Models\Berita;
+use App\Models\Eksternal;
 use Carbon\Carbon;
 use Validator;
 use Image;
@@ -75,6 +76,31 @@ class Beritax extends Controller
             }else{
                 // return redirect('/backend/inputberita')->with(['addno' => 'BERITA INI SUDAH ANDA UPLOAD SEBELUMNYA!']);
                 return response()->json(['msg' => 'BERITA SUDAH PERNAH DIINPUT!']);
+            }
+        }
+    }
+
+    public function addberitawartawan(Request $req){
+        $validator = Validator::make($req->all(), [
+            'data' => 'required',
+        ]);
+
+        if ($validator->fails()){
+            return response()->json(['msg' => $validator->errors()]);
+        }else{
+            $data = explode(PHP_EOL, $req->data);
+
+            foreach($data as $d){
+                $ins = Eksternal::create(['link' => $d,
+                                          'nrp'=> $req->nrp,
+                                          'satker' => $req->satker,
+                                          'input' => date('Y-m-d')
+                                        ]);
+                if($ins){
+                    return response()->json(['msg' => 'ok'], 200);
+                }else{
+                    return response()->json(['msg' => 'Laporan Gagal Di Input!'], 200);
+                }
             }
         }
     }

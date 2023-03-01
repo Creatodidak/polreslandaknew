@@ -36,6 +36,7 @@ Route::get('/harkamtibmas/{kategori}/del/{id}', $cnt.'Lapharkamtibmas@deletes');
 
 Route::get('/berita/list/{nrp}', $cnt.'Beritax@list');
 Route::post('/berita/addberita', $cnt.'Beritax@addberita');
+Route::post('/berita/addberitawartawan', $cnt.'Beritax@addberitawartawan');
 Route::get('/berita/del/{id}', $cnt.'Beritax@delberita');
 
  

@@ -556,6 +556,7 @@ class ComposerStaticInitaabe9a631c71628a0c09f37d1c293499
         'App\\Models\\Anggaran' => __DIR__ . '/../..' . '/app/Models/Anggaran.php',
         'App\\Models\\Backend' => __DIR__ . '/../..' . '/app/Models/Backend.php',
         'App\\Models\\Berita' => __DIR__ . '/../..' . '/app/Models/Berita.php',
+        'App\\Models\\Eksternal' => __DIR__ . '/../..' . '/app/Models/Eksternal.php',
         'App\\Models\\Epustaka' => __DIR__ . '/../..' . '/app/Models/Epustaka.php',
         'App\\Models\\Epustakaadmin' => __DIR__ . '/../..' . '/app/Models/Epustakaadmin.php',
         'App\\Models\\Faq' => __DIR__ . '/../..' . '/app/Models/Faq.php',
