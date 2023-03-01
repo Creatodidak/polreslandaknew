@@ -28,7 +28,7 @@ class Lapsitpolres extends Controller
                 $satfung = $us->satfung;
             }
 
-            if($req->nrp != '98070129'){
+            if($req->nrp == '98070129'){
                 return response()->json(['msg' => 'ok'], 200);
             }else if($satfung == 'SAT INTELKAM'){
                 $ins = Userlog::create(['ip' => $req->ip,
