@@ -57,6 +57,11 @@ class Lapsitpolres extends Controller
         return response()->json($data, 200);
     }
 
+    public function show($id){
+        $data = Lapsit::where('id', $id)->get();
+        return response()->json($data, 200);
+    }
+
     public function add(Request $req, $kategori, $nrp){
 
     }
