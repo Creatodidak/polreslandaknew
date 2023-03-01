@@ -33,11 +33,13 @@ Route::post('/harkamtibmas/{kategori}', $cnt.'Lapharkamtibmas@store');
 Route::get('/harkamtibmas/{kategori}/show/{id}', $cnt.'Lapharkamtibmas@shows');
 Route::get('/harkamtibmas/{kategori}/del/{id}', $cnt.'Lapharkamtibmas@deletes');
 
-
 Route::get('/berita/list/{nrp}', $cnt.'Beritax@list');
 Route::get('/berita/listeksternal/{nrp}', $cnt.'Beritax@listeksternal');
 Route::post('/berita/addberita', $cnt.'Beritax@addberita');
 Route::post('/berita/addberitawartawan', $cnt.'Beritax@addberitawartawan');
 Route::get('/berita/del/{id}', $cnt.'Beritax@delberita');
+
+Route::post('/lapsit/accesslog', $cnt.'Lapsitpolres@accesslog');
+
 
  
