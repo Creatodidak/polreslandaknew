@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Vrsusers;
 use App\Models\Personil;
 use App\Models\Userlog;
+use App\Models\Lapsit;
+use App\Models\Renmas;
 use Validator;
 
 class Lapsitpolres extends Controller
@@ -48,5 +50,18 @@ class Lapsitpolres extends Controller
                 return response()->json(['msg' => 'Anda Dilarang Mengakeses Halaman Ini!'], 403);
             }            
         }
+    }
+
+    public function list($kategori){
+        $data = Lapsit::where(['bidang' => $kategori, 'input' => date('Y-m-d')])->get();
+        return response()->json($data, 200);
+    }
+
+    public function add(Request $req, $kategori, $nrp){
+
+    }
+
+    public function del($id){
+        
     }
 }

@@ -40,6 +40,9 @@ Route::post('/berita/addberitawartawan', $cnt.'Beritax@addberitawartawan');
 Route::get('/berita/del/{id}', $cnt.'Beritax@delberita');
 
 Route::post('/lapsit/accesslog', $cnt.'Lapsitpolres@accesslog');
+Route::get('/lapsit/list/{kategori}', $cnt.'Lapsitpolres@list');
+Route::post('/lapsit/add/{kategori}/{nrp}', $cnt.'Lapsitpolres@add');
+Route::get('/lapsit/del/{id}', $cnt.'Lapsitpolres@del');
 
 
  
