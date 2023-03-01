@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\File;
 class Beritax extends Controller
 {
     public function list($nrp){
-        $data = Berita::where(['create_at' => date('Y-m-d'), 'nrp' => $nrp])->get();
+        $data = Berita::where(['create_at' => date('Y-m-d'), 'publisher' => $nrp])->get();
         // 'nrp' => $nrp, 
         return response($data, 200);
     }
