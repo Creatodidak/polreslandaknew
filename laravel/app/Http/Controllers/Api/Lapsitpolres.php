@@ -57,6 +57,42 @@ class Lapsitpolres extends Controller
         return response()->json($data, 200);
     }
 
+    public function rlist(){
+        $data = Renmas::where(['input' => date('Y-m-d')])->get();
+        return response()->json($data, 200);
+    }
+
+    public function radd(Request $req){
+        $validator = Validator::make($req->all(), [
+            'rengiat' => 'required',
+            'lokasi' => 'required',
+            'nrp' => 'required',
+            'situasi' => 'required',
+            'guantibmas' => 'required',
+            'jam_start' => 'required',
+            'jam_end' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['msg' => $validator->errors()]);
+        }else{
+            $ins = Renmas::create(['rengiat' => $req->rengiat,
+                                   'lokasi' => $req->lokasi,
+                                   'nrp' => $req->nrp,
+                                   'situasi' => $req->situasi,
+                                   'guantibmas' => ml2br($req->guantibmas),
+                                   'jam_start' => $req->jam_start,
+                                   'jam_end' => $req->jam_end,
+                                   'input' => date('Y-m-d')
+                                ]);
+            if($ins){
+                return response()->json(['msg' => 'ok'], 200);
+            }else{
+                return response()->json(['msg' => 'Data Gagal Di Input!'], 200);
+            }
+        }
+    }
+
     public function show($id){
         $data = Lapsit::where('id', $id)->get();
         return response()->json($data, 200);
@@ -111,8 +147,8 @@ class Lapsitpolres extends Controller
                                     'status' => $req->status,
                                     'judul' => $req->judul,
                                     'bidang' => $req->bidang,
-                                    'fakta' => $req->fakta,
-                                    'rekomendasi' => $req->rekomendasi,
+                                    'fakta' => nl2br($req->fakta),
+                                    'rekomendasi' => nl2br($req->rekomendasi),
                                     'input' => date('Y-m-d'),
                                     'foto1' => '/media/vrs/lapsit/'.$imgN1,
                                     'foto2' => '/media/vrs/lapsit/'.$imgN2,

@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Renmas extends Model
 {
     use HasFactory;
-    protected $fillable = ['input', 'rengiat'];
+    protected $fillable = ['input', 'nrp', 'rengiat', 'lokasi', 'situasi', 'guantibmas', 'jam_start', 'jam_end'];
 }
