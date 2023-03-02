@@ -63,7 +63,85 @@ class Lapsitpolres extends Controller
     }
 
     public function add(Request $req, $kategori, $nrp){
+        $validator = Validator::make($req->all(), [
+            'nrp' => 'required',
+            'lokasi' => 'required',
+            'status' => 'required',
+            'judul' => 'required',
+            'bidang' => 'required',
+            'fakta' => 'required',
+            'rekomendasi' => 'required',
+            'file' => 'required',
+            'file2' => 'required',
+            'file3' => 'required',
+            'file4' => 'required',
+            'file5' => 'required',
+        ]);
 
+        if ($validator->fails()) {
+            return response()->json(['msg' => $validator->errors()]);
+        }else{
+            $img1 = $req->file('file');
+            $img2 = $req->file('file2');
+            $img3 = $req->file('file3');
+            $img4 = $req->file('file4');
+            $img5 = $req->file('file5');
+            $imgN1 = time().'1.'.$img1->extension();
+            $imgN2 = time().'2.'.$img2->extension();
+            $imgN3 = time().'3.'.$img3->extension();
+            $imgN4 = time().'4.'.$img4->extension();
+            $imgN5 = time().'5.'.$img5->extension();
+
+            $destinationPath = public_path('/media/vrs/lapsit');
+            
+            $do1 = $img1->move($destinationPath, $imgN1);
+            $do2 = $img2->move($destinationPath, $imgN2);
+            $do3 = $img3->move($destinationPath, $imgN3);
+            $do4 = $img4->move($destinationPath, $imgN4);
+            $do5 = $img5->move($destinationPath, $imgN5);
+
+            if($do1){
+                if($do2){
+                    if($do3){
+                        if($do4){
+                            if($do5){
+                                $ins = Harpatrolidialogis::create([
+                                    'nrp' => $req->nrp,
+                                    'lokasi' => $req->lokasi,
+                                    'status' => $req->status,
+                                    'judul' => $req->judul,
+                                    'bidang' => $req->bidang,
+                                    'fakta' => $req->fakta,
+                                    'rekomendasi' => $req->rekomendasi,
+                                    'input' => date('Y-m-d'),
+                                    'foto1' => '/media/vrs/lapsit/'.$imgN1,
+                                    'foto2' => '/media/vrs/lapsit/'.$imgN2,
+                                    'foto3' => '/media/vrs/lapsit/'.$imgN3,
+                                    'foto4' => '/media/vrs/lapsit/'.$imgN4,
+                                    'foto5' => '/media/vrs/lapsit/'.$imgN5
+                                ]);
+
+                                if($ins){
+                                    return response()->json(['msg' => 'ok']);
+                                }else{
+                                    return response()->json(['msg' => 'Data Gagal Diinput!']);
+                                }
+                            }else{
+                                return response()->json(['msg' => 'Foto 5 Gagal Diupload!']);
+                            }
+                        }else{
+                            return response()->json(['msg' => 'Foto 4 Gagal Diupload!']);
+                        }
+                    }else{
+                        return response()->json(['msg' => 'Foto 3 Gagal Diupload!']);
+                    }
+                }else{
+                    return response()->json(['msg' => 'Foto 2 Gagal Diupload!']);
+                }
+            }else{
+                return response()->json(['msg' => 'Foto 1 Gagal Diupload!']);
+            }
+        }  
     }
 
     public function del($id){
