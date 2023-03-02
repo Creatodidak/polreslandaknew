@@ -80,7 +80,7 @@ class Lapsitpolres extends Controller
                                    'lokasi' => $req->lokasi,
                                    'nrp' => $req->nrp,
                                    'situasi' => $req->situasi,
-                                   'guantibmas' => ml2br($req->guantibmas),
+                                   'guantibmas' => nl2br($req->guantibmas),
                                    'jam_start' => $req->jam_start,
                                    'jam_end' => $req->jam_end,
                                    'input' => date('Y-m-d')
@@ -182,6 +182,16 @@ class Lapsitpolres extends Controller
 
     public function del($id){
         $data = Lapsit::where('id', $id)->delete();
+
+        if($data){
+            return response()->json(['msg'=>'ok'], 200);
+        }else{
+            return response()->json(['msg'=>'Data Gagal Dihapus!'], 200);
+        }
+    }
+
+    public function rdel($id){
+        $data = Renmas::where('id', $id)->delete();
 
         if($data){
             return response()->json(['msg'=>'ok'], 200);
