@@ -16,7 +16,7 @@ class pimpinanx extends Controller
     }
 
     public function list($nrp){
-        $data = Pimpinan::where(['nrp' => $nrp, 'input' => date('Y-m-d')])->get();
+        $data = Pimpinan::where(['input' => date('Y-m-d')])->get();
 
         return response($data);
     }
