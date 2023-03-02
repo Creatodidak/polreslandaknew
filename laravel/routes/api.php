@@ -48,6 +48,7 @@ Route::get('/lapsit/rlist', $cnt.'Lapsitpolres@rlist');
 Route::post('/lapsit/radd', $cnt.'Lapsitpolres@radd');
 Route::get('/lapsit/del/{id}', $cnt.'Lapsitpolres@del');
 Route::get('/lapsit/rdel/{id}', $cnt.'Lapsitpolres@rdel');
-
+Route::get('/tahanan', $cnt.'Lapsitpolres@tahanan');
+Route::post('/tahanan/edit', $cnt.'Lapsitpolres@edittahanan');
 
  

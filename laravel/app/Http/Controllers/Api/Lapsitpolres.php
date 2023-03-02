@@ -9,6 +9,7 @@ use App\Models\Personil;
 use App\Models\Userlog;
 use App\Models\Lapsit;
 use App\Models\Renmas;
+use App\Models\Tahanan;
 use Validator;
 
 class Lapsitpolres extends Controller
@@ -197,6 +198,27 @@ class Lapsitpolres extends Controller
             return response()->json(['msg'=>'ok'], 200);
         }else{
             return response()->json(['msg'=>'Data Gagal Dihapus!'], 200);
+        }
+    }
+
+    public function tahanan(){
+        $data = Tahanan::get();
+        return response()->json($data, 200);
+    }
+
+    public function edittahanan(Request $req){
+        $upd = Tahanan::where('id', '1')->update(['total' => $req->total,
+                                                'tahananrumah' => $req->tahananrumah,
+                                                'rutanpolsek' => $req->rutanpolsek,
+                                                'tahananpropam' => $req->tahananpropam,
+                                                'rutanlandak' => $req->rutanlandak,
+                                                'titipanlantas' => $req->titipanlantas,
+                                                'titipannarkoba' => $req->titipannarkoba,
+                                            ]);
+        if($upd){
+            return response()->json(['msg' => 'ok'], 200);
+        }else{
+            return response()->json(['msg' => 'Data Gagal Di Update!'], 200);
         }
     }
 }
