@@ -62,7 +62,7 @@ class Lapsitpolres extends Controller
         return response()->json($data, 200);
     }
 
-    public function add(Request $req, $kategori, $nrp){
+    public function add(Request $req){
         $validator = Validator::make($req->all(), [
             'nrp' => 'required',
             'lokasi' => 'required',
