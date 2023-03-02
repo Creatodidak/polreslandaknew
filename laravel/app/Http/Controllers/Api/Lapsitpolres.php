@@ -105,7 +105,7 @@ class Lapsitpolres extends Controller
                     if($do3){
                         if($do4){
                             if($do5){
-                                $ins = Harpatrolidialogis::create([
+                                $ins = Lapsit::create([
                                     'nrp' => $req->nrp,
                                     'lokasi' => $req->lokasi,
                                     'status' => $req->status,
