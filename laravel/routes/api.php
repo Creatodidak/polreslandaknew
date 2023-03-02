@@ -44,7 +44,7 @@ Route::post('/lapsit/accesslog', $cnt.'Lapsitpolres@accesslog');
 Route::get('/lapsit/list/{kategori}', $cnt.'Lapsitpolres@list');
 Route::get('/lapsit/rincian/{id}', $cnt.'Lapsitpolres@show');
 Route::post('/lapsit/add', $cnt.'Lapsitpolres@add');
-Route::post('/lapsit/rlist', $cnt.'Lapsitpolres@rlist');
+Route::get('/lapsit/rlist', $cnt.'Lapsitpolres@rlist');
 Route::post('/lapsit/radd', $cnt.'Lapsitpolres@radd');
 Route::get('/lapsit/del/{id}', $cnt.'Lapsitpolres@del');
 Route::get('/lapsit/rdel/{id}', $cnt.'Lapsitpolres@rdel');
