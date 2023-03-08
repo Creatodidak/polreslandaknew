@@ -52,3 +52,4 @@ Route::get('/tahanan', $cnt.'Lapsitpolres@tahanan');
 Route::post('/tahanan/edit', $cnt.'Lapsitpolres@edittahanan');
 
 Route::get('/lantas/list/{cat}', $cnt.'Lantas@list');
+Route::post('/lantas/add/{cat}', $cnt.'Lantas@add');
