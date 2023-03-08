@@ -76,7 +76,7 @@ class Lantas extends Controller
                                 if($do5){
                                     $personil = '["'.str_replace(' ,', '","',str_replace(', ', '","',str_replace(' , ', '","',$req->personil))).'"]';
 
-                                    $ins = Pengaturan::create([
+                                    $ins = Turlalin::create([
                                         'lokasi' => $req->lokasi,
                                         'latitude' => $req->latitude,
                                         'longitude' => $req->longitude,
