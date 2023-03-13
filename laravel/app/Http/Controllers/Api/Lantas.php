@@ -17,7 +17,7 @@ class Lantas extends Controller
             $data = Turlalin::where('input', date('Y-m-d'))->get();
             return response()->json($data, 200);
         }else if($cat == 'pengawalan'){
-            $data = Pengawalan::where('input', date('Y-m-d'))->get();
+            $data = Pengawalan::whereDate('created_at', date('Y-m-d'))->get();
             return response()->json($data, 200);
         }else if($cat == 'patroli'){
             $data = Patrolijalanraya::where('input', date('Y-m-d'))->get();
