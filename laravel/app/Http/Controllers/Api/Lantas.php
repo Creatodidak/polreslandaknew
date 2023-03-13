@@ -20,7 +20,7 @@ class Lantas extends Controller
             $data = Pengawalan::whereDate('created_at', date('Y-m-d'))->get();
             return response()->json($data, 200);
         }else if($cat == 'patroli'){
-            $data = Patrolijalanraya::where('input', date('Y-m-d'))->get();
+            $data = Patrolijalanraya::whereDate('created_at', date('Y-m-d'))->get();
             return response()->json($data, 200);
         }else if($cat == 'penertiban'){
             $data = Penertibanll::where('input', date('Y-m-d'))->get();
